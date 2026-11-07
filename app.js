@@ -94,7 +94,8 @@
     document.getElementById("year").textContent = new Date().getFullYear();
     document.getElementById("footer-links").innerHTML = S.sections.map(function (s) {
       return '<a href="' + href(s.pages.length ? s.id : "") + '">' + esc(s.label) + "</a>";
-    }).join("") + (/MWPlusApp/.test(navigator.userAgent) ? "" : '<a href="#contact--application"><b>📱 Application Android</b></a>');
+    }).join("") + '<a href="#membres--compte"><b>👥 Espace membres</b></a>' +
+      (/MWPlusApp/.test(navigator.userAgent) ? "" : '<a href="#contact--application"><b>📱 Application Android</b></a>');
     var R = S.reseaux || {}, tel = (S.telephone || "").trim(), wa = (S.whatsapp || "").trim();
     function bloc(icon, label, valeur, lien) {
       return '<div class="contactbar__item"><span class="contactbar__ico">' + ico(icon) + "</span><div><small>" + label + "</small>" +
@@ -300,7 +301,7 @@
       case "annuaire": body = annuaire(p); break;
       case "formulaire": body = formulaire(p); break;
       case "application": body = application(); break;
-      case "musique": body = '<div class="search" role="search"><input class="input" id="q" type="search" placeholder="Titre, artiste, album…" aria-label="Rechercher un morceau">' +
+      case "musique": body = '<p><a class="btn btn--brand btn--sm" href="#membres--proposer">Proposer un morceau</a></p><div class="search" role="search"><input class="input" id="q" type="search" placeholder="Titre, artiste, album…" aria-label="Rechercher un morceau">' +
         '<select class="select" id="artiste" aria-label="Artiste"><option value="">Tous les artistes</option></select></div><div id="results" class="titres"><p class="muted">Chargement…</p></div>'; break;
       case "villes": body = figure(p.image, p.titre) + paras(p.texte) + '<div class="grid villes-grid" id="villes-grid"><p class="muted">Chargement des villes…</p></div>'; break;
       default:
@@ -343,10 +344,19 @@
   }
 
   var hooks = {
+    actualites: function (p) {
+      if (p.filtre !== "Événement" || !window.MWMembres) return;
+      var d = document.createElement("section"); d.className = "agenda";
+      document.querySelector(".article").appendChild(d); window.MWMembres.agenda(d);
+    },
     musique: function () {
       var q = document.getElementById("q"), sel = document.getElementById("artiste"), out = document.getElementById("results");
-      lire("musique.json").then(function (d) {
-        var T = (d.titres || []).filter(function (t) { return t.titre && (t.audio || t.audioUrl || t.youtube); });
+      var membres = window.MWMembres ? window.MWMembres.publies("musique") : Promise.resolve([]);
+      Promise.all([lire("musique.json"), membres]).then(function (r) {
+        var d = r[0];
+        var T = (d.titres || []).concat(r[1].map(function (p) {
+          return { titre: p.titre, artiste: p.artiste, album: p.album, annee: p.annee, youtube: p.youtube, telechargement: false, texte: "", membre: p.auteurNom };
+        })).filter(function (t) { return t.titre && (t.audio || t.audioUrl || t.youtube); });
         sel.innerHTML += uniq(T.map(function (t) { return t.artiste; })).map(function (a) { return "<option>" + esc(a) + "</option>"; }).join("");
         function run() {
           var t = norm(q.value), a = sel.value;
@@ -356,7 +366,8 @@
             var src = x.audio || x.audioUrl, yt = idYoutube(x.youtube);
             var pochette = x.image || (yt ? "https://i.ytimg.com/vi/" + yt + "/hqdefault.jpg" : "");
             return '<article class="titre">' + (pochette ? '<img src="' + esc(pochette) + '" alt="" loading="lazy">' : '<span class="titre__note" aria-hidden="true">♪</span>') +
-              '<div class="titre__corps"><h3>' + esc(x.titre) + "</h3><p>" + esc([x.artiste, x.album, x.annee, x.genre].filter(Boolean).join(" · ")) + "</p>" +
+              '<div class="titre__corps"><h3>' + esc(x.titre) + "</h3><p>" + esc([x.artiste, x.album, x.annee, x.genre].filter(Boolean).join(" · ")) +
+              (x.membre ? " · proposé par " + esc(x.membre) : "") + "</p>" +
               (src ? '<audio controls preload="none" src="' + esc(src) + '"></audio>' :
                 yt ? '<button type="button" class="yt" data-yt="' + yt + '" aria-label="Écouter ' + esc(x.titre) + '"><img src="https://i.ytimg.com/vi/' + yt + '/hqdefault.jpg" alt="" loading="lazy"><span class="yt__play">▶ Écouter</span></button>' : "") +
               '<div class="titre__actions">' +
@@ -682,9 +693,11 @@
     var s = parts[0] ? section(parts[0]) : null;
     clearInterval(timer);
     main.onclick = null;
+    if (window.MWMembres) window.MWMembres.quitter();
     if (!parts.length || (s && s.id === "accueil")) renderHome();
     else if (parts[0] === "recherche") renderSearch();
     else if (parts[0] === "ville") renderVille(parts[1]);
+    else if (parts[0] === "membres") { if (window.MWMembres) window.MWMembres.render(parts[1]); else renderNotFound(); }
     else if (!s) renderNotFound();
     else if (!parts[1]) renderSection(s);
     else {
@@ -701,6 +714,10 @@
     window.scrollTo(0, 0);
     main.focus({ preventScroll: true });
   }
+
+  /* Outils partagés avec membres.js */
+  window.MW = { esc: esc, norm: norm, pageHead: pageHead, main: main, idYoutube: idYoutube, dansApp: DANS_APP,
+    S: function () { return S; }, villes: function () { return villesListe(); } };
 
   /* ---------- Chargement du contenu ---------- */
   function lire(f) {

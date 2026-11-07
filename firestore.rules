@@ -1,0 +1,65 @@
+rules_version = '2';
+// Règles de sécurité de l'espace membres MW+ (à coller dans Firebase → Firestore → Règles).
+// Modérateurs : remplacer ou compléter la liste d'adresses ci-dessous (comptes Google, e-mail vérifié).
+service cloud.firestore {
+  match /databases/{base}/documents {
+    function connecte() { return request.auth != null; }
+    function moderateur() {
+      return connecte() && request.auth.token.email_verified == true
+        && request.auth.token.email in ['hermanndedelobly@gmail.com'];
+    }
+    function texte(t, max) { return t is string && t.size() > 0 && t.size() <= max; }
+
+    // Profils : nom et ville affichés dans les discussions
+    match /profils/{uid} {
+      allow read: if connecte();
+      allow create, update: if connecte() && request.auth.uid == uid && texte(request.resource.data.nom, 40);
+      allow delete: if moderateur() || (connecte() && request.auth.uid == uid);
+    }
+
+    // Propositions de musiques et d'événements : publiées après validation
+    match /propositions/{id} {
+      allow read: if resource.data.statut == 'publie' || moderateur()
+        || (connecte() && resource.data.auteur == request.auth.uid);
+      allow create: if connecte()
+        && request.resource.data.auteur == request.auth.uid
+        && request.resource.data.statut == 'attente'
+        && request.resource.data.type in ['musique', 'evenement']
+        && texte(request.resource.data.titre, 120)
+        && request.resource.data.creeLe == request.time;
+      allow update, delete: if moderateur();
+    }
+
+    // Salons de discussion (général et villes)
+    match /salons/{salon}/messages/{id} {
+      allow read: if connecte();
+      allow create: if connecte() && request.resource.data.uid == request.auth.uid
+        && texte(request.resource.data.texte, 1000) && texte(request.resource.data.nom, 40)
+        && request.resource.data.creeLe == request.time;
+      allow delete: if moderateur() || (connecte() && resource.data.uid == request.auth.uid);
+    }
+
+    // Messages privés entre deux membres
+    match /conversations/{conv} {
+      allow read: if connecte() && request.auth.uid in resource.data.membres;
+      allow create: if connecte() && request.auth.uid in request.resource.data.membres
+        && request.resource.data.membres.size() == 2;
+      allow update: if connecte() && request.auth.uid in resource.data.membres
+        && request.resource.data.membres == resource.data.membres;
+      match /messages/{id} {
+        allow read: if connecte()
+          && request.auth.uid in get(/databases/$(base)/documents/conversations/$(conv)).data.membres;
+        allow create: if connecte() && request.resource.data.uid == request.auth.uid
+          && texte(request.resource.data.texte, 2000)
+          && request.resource.data.creeLe == request.time
+          && request.auth.uid in get(/databases/$(base)/documents/conversations/$(conv)).data.membres;
+      }
+    }
+
+    // Signalements de messages
+    match /signalements/{id} {
+      allow create: if connecte() && request.resource.data.par == request.auth.uid;
+      allow read, delete: if moderateur();
+    }
+  }
+}
