@@ -19,8 +19,10 @@
       "type": "texte",
       "chapo": "Montagnes, forêts sacrées, rivières et lieux de mémoire.",
       "texte": "Parmi les sites naturels de la région figurent le parc national du Mont Péko et, plus au sud, le parc national de Taï, inscrit au patrimoine mondial de l'UNESCO.\n\nChaque site sera présenté avec les conditions d'accès, la meilleure saison et les règles à respecter.",
-      "image": "",
-      "aCompleter": true
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Ta%C3%AF_National_Park_(24148248710).jpg?width=1200",
+      "aCompleter": true,
+      "credit": "Parc national de Taï. Photo : yakovlev.alexey, CC BY-SA 2.0, via Wikimedia Commons",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Ta%C3%AF_National_Park_(24148248710).jpg"
     },
     {
       "id": "paysages",
@@ -28,8 +30,10 @@
       "type": "texte",
       "chapo": "Forêt dense, collines, savanes arborées, faune et flore de l'Ouest ivoirien.",
       "texte": "Galeries photos et fiches sur les espèces et les paysages remarquables.",
-      "image": "",
-      "aCompleter": true
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Parc_national_de_Ta%C3%AF.jpg",
+      "aCompleter": true,
+      "credit": "Parc national de Taï. Photo : Jojoy99, CC BY-SA 4.0, via Wikimedia Commons",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Parc_national_de_Ta%C3%AF.jpg"
     },
     {
       "id": "hebergements",

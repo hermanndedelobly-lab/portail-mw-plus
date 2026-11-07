@@ -1249,6 +1249,14 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
+        required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
         widget: text
@@ -1336,6 +1344,14 @@ collections:
       - label: Image
         name: image
         widget: image
+        required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
         required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
@@ -1425,6 +1441,14 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
+        required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
         widget: text
@@ -1512,6 +1536,14 @@ collections:
       - label: Image
         name: image
         widget: image
+        required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
         required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
@@ -1601,6 +1633,14 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
+        required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
         widget: text
@@ -1688,6 +1728,14 @@ collections:
       - label: Image
         name: image
         widget: image
+        required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
         required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
@@ -1777,6 +1825,14 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
+        required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
         widget: text
@@ -1865,6 +1921,14 @@ collections:
         name: image
         widget: image
         required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
+        required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte
         widget: text
@@ -1952,6 +2016,14 @@ collections:
       - label: Image
         name: image
         widget: image
+        required: false
+      - label: Crédit de l'image (auteur, licence)
+        name: credit
+        widget: string
+        required: false
+      - label: Lien de la source de l'image
+        name: creditUrl
+        widget: string
         required: false
       - label: Texte (laissez une ligne vide entre deux paragraphes)
         name: texte

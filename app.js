@@ -22,8 +22,10 @@
     return String(t || "").split(/\n\s*\n/).map(function (x) { return x.trim(); }).filter(Boolean)
       .map(function (x) { return "<p>" + esc(x).replace(/\n/g, "<br>") + "</p>"; }).join("");
   }
-  function figure(src, alt) {
-    return src ? '<figure class="figure"><img src="' + esc(src) + '" alt="' + esc(alt || "") + '" loading="lazy"></figure>' : "";
+  function figure(src, alt, credit, creditUrl) {
+    if (!src) return "";
+    var c = credit ? '<figcaption>' + (creditUrl ? '<a href="' + esc(creditUrl) + '" target="_blank" rel="noopener">' + esc(credit) + "</a>" : esc(credit)) + "</figcaption>" : "";
+    return '<figure class="figure"><img src="' + esc(src) + '" alt="' + esc(alt || "") + '" loading="lazy">' + c + "</figure>";
   }
 
   /* ---------- Menu ---------- */
@@ -303,9 +305,9 @@
       case "application": body = application(); break;
       case "musique": body = '<p><a class="btn btn--brand btn--sm" href="#membres--proposer">Proposer un morceau</a></p><div class="search" role="search"><input class="input" id="q" type="search" placeholder="Titre, artiste, album…" aria-label="Rechercher un morceau">' +
         '<select class="select" id="artiste" aria-label="Artiste"><option value="">Tous les artistes</option></select></div><div id="results" class="titres"><p class="muted">Chargement…</p></div>'; break;
-      case "villes": body = figure(p.image, p.titre) + paras(p.texte) + '<div class="grid villes-grid" id="villes-grid"><p class="muted">Chargement des villes…</p></div>'; break;
+      case "villes": body = figure(p.image, p.titre, p.credit, p.creditUrl) + paras(p.texte) + '<div class="grid villes-grid" id="villes-grid"><p class="muted">Chargement des villes…</p></div>'; break;
       default:
-        body = figure(p.image, p.titre) + paras(p.texte) + (p.aCompleter ? aCompleter : "");
+        body = figure(p.image, p.titre, p.credit, p.creditUrl) + paras(p.texte) + (p.aCompleter ? aCompleter : "");
     }
     main.innerHTML = pageHead(s.label, p.titre, p.chapo,
       '<a href="#accueil">Accueil</a> › <a href="' + href(s.id) + '">' + esc(s.label) + "</a> › " + esc(p.titre)) +

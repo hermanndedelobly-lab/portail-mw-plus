@@ -19,8 +19,10 @@
       "type": "texte",
       "chapo": "Les grandes étapes de l'histoire du pays wê et les biens matériels et immatériels qui en témoignent.",
       "texte": "Organisation lignagère, alliances entre villages, rencontres avec les peuples voisins, période coloniale puis Côte d'Ivoire indépendante : l'histoire wê se lit dans les récits, les chants et les objets.\n\nLe patrimoine wê comprend notamment les masques, la statuaire, les cases et sites sacrés, les forêts protégées par la tradition et un très riche patrimoine oral.",
-      "image": "",
-      "aCompleter": true
+      "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Gere_mask,_Ivory_Coast_03.jpg?width=1200",
+      "aCompleter": true,
+      "credit": "Masque guéré (musée d'Art africain de Belgrade). Photo : Mickey Mystique, CC BY-SA 4.0, via Wikimedia Commons",
+      "creditUrl": "https://commons.wikimedia.org/wiki/File:Gere_mask,_Ivory_Coast_03.jpg"
     },
     {
       "id": "personnalites",
