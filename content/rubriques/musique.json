@@ -5,6 +5,15 @@
   "image": "assets/photos/danse-acrobatique.webp",
   "pages": [
     {
+      "id": "ecouter",
+      "titre": "Écouter et télécharger",
+      "type": "musique",
+      "chapo": "La musique wê à écouter en ligne et à télécharger, avec l'accord des artistes.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false
+    },
+    {
       "id": "artistes",
       "titre": "Artistes wê",
       "type": "texte",

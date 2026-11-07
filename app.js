@@ -300,6 +300,8 @@
       case "annuaire": body = annuaire(p); break;
       case "formulaire": body = formulaire(p); break;
       case "application": body = application(); break;
+      case "musique": body = '<div class="search" role="search"><input class="input" id="q" type="search" placeholder="Titre, artiste, album…" aria-label="Rechercher un morceau">' +
+        '<select class="select" id="artiste" aria-label="Artiste"><option value="">Tous les artistes</option></select></div><div id="results" class="titres"><p class="muted">Chargement…</p></div>'; break;
       case "villes": body = figure(p.image, p.titre) + paras(p.texte) + '<div class="grid villes-grid" id="villes-grid"><p class="muted">Chargement des villes…</p></div>'; break;
       default:
         body = figure(p.image, p.titre) + paras(p.texte) + (p.aCompleter ? aCompleter : "");
@@ -341,6 +343,31 @@
   }
 
   var hooks = {
+    musique: function () {
+      var q = document.getElementById("q"), sel = document.getElementById("artiste"), out = document.getElementById("results");
+      lire("musique.json").then(function (d) {
+        var T = (d.titres || []).filter(function (t) { return t.titre && (t.audio || t.audioUrl || t.youtube); });
+        sel.innerHTML += uniq(T.map(function (t) { return t.artiste; })).map(function (a) { return "<option>" + esc(a) + "</option>"; }).join("");
+        function run() {
+          var t = norm(q.value), a = sel.value;
+          var r = T.filter(function (x) { return (!a || x.artiste === a) && (!t || norm([x.titre, x.artiste, x.album, x.genre].join(" ")).indexOf(t) > -1); });
+          if (!T.length) { out.innerHTML = '<div class="empty"><strong>Les premiers titres arrivent bientôt</strong>Artiste wê ? <a href="#contact--proposer">Proposez votre musique</a>.</div>'; return; }
+          out.innerHTML = r.length ? r.map(function (x) {
+            var src = x.audio || x.audioUrl;
+            return '<article class="titre">' + (x.image ? '<img src="' + esc(x.image) + '" alt="" loading="lazy">' : '<span class="titre__note" aria-hidden="true">♪</span>') +
+              '<div class="titre__corps"><h3>' + esc(x.titre) + "</h3><p>" + esc([x.artiste, x.album, x.annee, x.genre].filter(Boolean).join(" · ")) + "</p>" +
+              (src ? '<audio controls preload="none" src="' + esc(src) + '"></audio>' : "") +
+              '<div class="titre__actions">' +
+              (src && x.telechargement ? '<a class="btn btn--brand btn--sm" href="' + esc(src) + '" download>Télécharger</a>' : "") +
+              (x.youtube ? '<a class="btn btn--line btn--sm" href="' + esc(x.youtube) + '" target="_blank" rel="noopener">Voir sur YouTube</a>' : "") +
+              "</div>" + (x.texte ? '<details><summary>Paroles et présentation</summary>' + paras(x.texte) + "</details>" : "") + "</div></article>";
+          }).join("") : '<div class="empty">Aucun morceau ne correspond.</div>';
+        }
+        q.addEventListener("input", run); sel.addEventListener("change", run); run();
+        // un seul morceau à la fois
+        out.addEventListener("play", function (e) { out.querySelectorAll("audio").forEach(function (a) { if (a !== e.target) a.pause(); }); }, true);
+      }).catch(function () { out.innerHTML = '<div class="empty">La liste des morceaux n’a pas pu être chargée.</div>'; });
+    },
     villes: function () {
       Promise.all(villesListe().map(function (v) {
         return chargerVille(v.id).catch(function () { return { id: v.id, nom: v.nom, quartiers: [], acteurs: [] }; });

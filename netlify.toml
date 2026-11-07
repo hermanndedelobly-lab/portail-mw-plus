@@ -19,3 +19,9 @@
   [headers.values]
     Content-Type = "application/vnd.android.package-archive"
     Content-Disposition = "attachment"
+
+# Morceaux de musique téléchargeables
+[[headers]]
+  for = "/assets/audio/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

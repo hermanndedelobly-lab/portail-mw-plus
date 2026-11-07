@@ -100,6 +100,66 @@ collections:
         name: lien
         widget: string
         required: false
+- name: musique
+  label: Musique (écoute et téléchargement)
+  files:
+  - label: Titres
+    name: titres
+    file: content/musique.json
+    fields:
+    - label: Titres
+      label_singular: titre
+      name: titres
+      widget: list
+      add_to_top: true
+      summary: '{{fields.artiste}} · {{fields.titre}}'
+      fields:
+      - label: Titre du morceau
+        name: titre
+        widget: string
+      - label: Artiste
+        name: artiste
+        widget: string
+      - label: Album ou single
+        name: album
+        widget: string
+        required: false
+      - label: Année
+        name: annee
+        widget: string
+        required: false
+      - label: Genre
+        name: genre
+        widget: string
+        required: false
+        hint: 'Ex. : tradition, zouglou, gospel, tématé…'
+      - label: Fichier audio (MP3)
+        name: audio
+        widget: file
+        required: false
+        media_folder: /assets/audio
+        public_folder: assets/audio
+      - label: Ou adresse du fichier audio (si hébergé ailleurs)
+        name: audioUrl
+        widget: string
+        required: false
+      - label: Lien YouTube
+        name: youtube
+        widget: string
+        required: false
+      - label: Pochette
+        name: image
+        widget: image
+        required: false
+      - label: Téléchargement autorisé par l’artiste
+        name: telechargement
+        widget: boolean
+        default: false
+        required: false
+      - label: Paroles ou présentation
+        name: texte
+        widget: text
+        required: false
 - name: dictionnaire
   label: Dictionnaire
   files:
@@ -1179,6 +1239,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1265,6 +1327,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1351,6 +1415,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1437,6 +1503,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1523,6 +1591,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1609,6 +1679,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1695,6 +1767,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1781,6 +1855,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1867,6 +1943,8 @@ collections:
           value: villes
         - label: Application mobile
           value: application
+        - label: Lecteur de musique
+          value: musique
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
