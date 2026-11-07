@@ -1,6 +1,13 @@
 {
   "articles": [
     {
+      "categorie": "Annonce",
+      "titre": "Mw plus est désormais en ligne ",
+      "resume": "Toute la culture wê en un seul endroit !!!\nPartagez la nouvelle autour de vous !",
+      "lieu": "En ligne ",
+      "date": "2026-11-07"
+    },
+    {
       "date": "2026-11-07",
       "categorie": "Annonce",
       "titre": "Lancement du portail MW+",
