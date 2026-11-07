@@ -501,3 +501,6 @@ a.card:hover { transform: translateY(-3px); border-color: var(--gold); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .badge:not(.badge--ok) { color: #ffb24d; } }
 :root[data-theme="dark"] .badge:not(.badge--ok) { color: #ffb24d; }
 @media (max-width: 560px) { .ville__stats > div { min-width: 0; flex: 1 1 30%; } .ville__stats .btn { margin-left: 0; width: 100%; justify-content: center; } }
+.acteur__fix { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin-top: 2px; padding: 5px 10px; border-radius: 999px; border: 1px dashed var(--brand); color: var(--brand); font-size: .8rem; font-weight: 600; text-decoration: none; }
+.acteur__fix:hover { background: var(--brand-soft); }
+.form__intro { margin: 0; padding: 10px 14px; border-radius: 10px; background: var(--brand-soft); }

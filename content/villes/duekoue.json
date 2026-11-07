@@ -165,11 +165,11 @@
       "secteur": "Pharmacie",
       "activite": "Pharmacie",
       "quartier": "",
-      "adresse": "",
+      "adresse": "Près de la Grande mosquée et d'une gare routière",
       "telephone": "",
       "description": "",
-      "source": "Annuaire CI",
-      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "source": "Mapcarta (données OpenStreetMap)",
+      "sourceUrl": "https://mapcarta.com/N4464822485",
       "verifie": false
     },
     {
@@ -590,6 +590,66 @@
       "description": "",
       "source": "Medivoire",
       "sourceUrl": "https://www.medivoire.com/en/hospital/hopital-general-de-douekoue-15cf7646",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie Kokoman Vie",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "Kôkôman",
+      "adresse": "Quartier Kokoman",
+      "telephone": "07 87 75 13 73",
+      "description": "Numéro tiré de la liste de garde de juin 2024 (Mairie de Cocody).",
+      "source": "Réseau de pharmacies MCI Care (2023)",
+      "sourceUrl": "https://www.optimus-ci.com/wp-content/uploads/2023/11/2_RESEAU-PHARMACIES-MCI_OFFRE-SANTE-.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie Divine Grâce",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "Route de Guiglo",
+      "telephone": "27 33 70 21 79",
+      "description": "Adresse donnée par une seule source.",
+      "source": "Pharmacies de garde CI",
+      "sourceUrl": "https://www.pharmacies-de-garde.ci/listing/pharmacie-grace-divine-2/",
+      "verifie": false
+    },
+    {
+      "nom": "Collège André Doh",
+      "secteur": "Éducation",
+      "activite": "Établissement secondaire privé",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "WhatSchool (données OpenStreetMap)",
+      "sourceUrl": "https://whatschool.ai/en/ci/school/college-andre-doh",
+      "verifie": false
+    },
+    {
+      "nom": "Collège le Professionnel",
+      "secteur": "Éducation",
+      "activite": "Établissement secondaire",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "WhatSchool (données OpenStreetMap)",
+      "sourceUrl": "https://whatschool.ai/en/ci/school/college-le-professionnel",
+      "verifie": false
+    },
+    {
+      "nom": "EPP Duékoué 3",
+      "secteur": "Éducation",
+      "activite": "École primaire publique",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "WhatSchool (données OpenStreetMap)",
+      "sourceUrl": "https://whatschool.ai/en/ci/school/epp-duekoue-3",
       "verifie": false
     }
   ]

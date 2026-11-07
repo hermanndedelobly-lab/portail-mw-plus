@@ -390,6 +390,17 @@
     },
     formulaire: function (p) {
       var f = document.getElementById("form");
+      var selVille = f.querySelector('select[name="ville"]'), dl = document.getElementById("dl-quartiers");
+      if (selVille && dl) {
+        var majQuartiers = function () {
+          var v = villesListe().filter(function (x) { return x.nom === selVille.value; })[0];
+          dl.innerHTML = "";
+          if (v) chargerVille(v.id).then(function (d) {
+            dl.innerHTML = d.quartiers.map(function (q) { return '<option value="' + esc(q.nom) + '">'; }).join("");
+          }).catch(function () {});
+        };
+        selVille.addEventListener("change", majQuartiers); majQuartiers();
+      }
       f.addEventListener("submit", function (e) {
         e.preventDefault();
         if (!f.reportValidity()) return;
@@ -427,17 +438,18 @@
     var pv = prefill; prefill = {};
     var champs = {
       activite:
-        '<div class="row"><label>Nom de l’activité ou de l’entreprise<input class="input" name="nom" required></label>' +
+        (pv.type === "quartier" ? '<p class="form__intro">Merci ! Choisissez le quartier où se trouve <b>' + esc(pv.nom) + "</b>. Ajoutez une adresse ou un repère si vous le pouvez.</p>" : "") +
+        '<div class="row"><label>Nom de l’activité ou de l’entreprise<input class="input" name="nom" required value="' + esc(pv.nom || "") + '"></label>' +
         '<label>Secteur<select class="select input" name="secteur" required>' + SECTEURS.map(function (s) { return "<option>" + esc(s) + "</option>"; }).join("") + "</select></label></div>" +
         '<div class="row"><label>Ville<select class="select input" name="ville" required>' + villesListe().map(function (v) {
           return "<option" + (v.nom === pv.ville ? " selected" : "") + ">" + esc(v.nom) + "</option>"; }).join("") + "</select></label>" +
-        '<label>Quartier<input class="input" name="quartier" value="' + esc(pv.quartier || "") + '"></label></div>' +
+        '<label>Quartier<input class="input" name="quartier" list="dl-quartiers" autocomplete="off" placeholder="Choisir ou écrire" value="' + esc(pv.quartier || "") + '"' + (pv.type === "quartier" ? " required" : "") + '><datalist id="dl-quartiers"></datalist></label></div>' +
         '<div class="row"><label>Adresse ou repère <span class="hint">(ex. : près du marché central)</span><input class="input" name="adresse"></label>' +
         '<label>Téléphone<input class="input" name="telephone" type="tel" autocomplete="tel"></label></div>' +
         '<div class="row"><label>Responsable<input class="input" name="responsable" autocomplete="name"></label>' +
         '<label>E-mail <span class="hint">(facultatif)</span><input class="input" name="email" type="email" autocomplete="email"></label></div>' +
         '<label>Description de l’activité<textarea class="input" name="description" rows="4"></textarea></label>' +
-        '<label>S’agit-il d’une correction ?<select class="select input" name="type"><option>Nouvelle inscription</option><option>Correction d’une fiche existante</option><option>Signaler une activité fermée</option></select></label>' +
+        '<label>S’agit-il d’une correction ?<select class="select input" name="type"><option>Nouvelle inscription</option><option' + (pv.type === "quartier" ? " selected" : "") + '>Correction d’une fiche existante</option><option>Signaler une activité fermée</option></select></label>' +
         '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400"><input type="checkbox" name="accord" value="oui" required> Je confirme que ces informations sont exactes et j’accepte leur publication sur le portail.</label>',
       contact:
         '<div class="row"><label>Nom<input class="input" name="nom" required autocomplete="name"></label>' +
@@ -549,6 +561,7 @@
           '<li>' + ico("pin") + "<span>" + esc([a.quartier ? "Quartier " + a.quartier : "Quartier à préciser", a.adresse].filter(Boolean).join(" · ")) + "</span></li>" +
           tel.map(function (t) { return "<li>" + ico("phone") + '<a href="tel:' + esc(t.replace(/\s/g, "")) + '">' + esc(t) + "</a></li>"; }).join("") +
           "</ul>" + (a.description ? '<p class="acteur__desc">' + esc(a.description) + "</p>" : "") +
+          (!a.quartier ? '<a class="acteur__fix" href="#business--inscrire" data-ville="' + esc(v.nom) + '" data-nom="' + esc(a.nom) + '" data-type="quartier">' + ico("pin") + "Je connais son quartier</a>" : "") +
           (a.source ? '<p class="acteur__src">Source : ' + (a.sourceUrl ? '<a href="' + esc(a.sourceUrl) + '" target="_blank" rel="noopener">' + esc(a.source) + "</a>" : esc(a.source)) + "</p>" : "") +
           "</article>";
       }
@@ -586,7 +599,7 @@
   // Pré-remplissage du formulaire d'inscription depuis une page de ville
   document.addEventListener("click", function (e) {
     var a = e.target.closest("a[data-ville]");
-    if (a) prefill = { ville: a.dataset.ville, quartier: a.dataset.quartier || "" };
+    if (a) prefill = { ville: a.dataset.ville, quartier: a.dataset.quartier || "", nom: a.dataset.nom || "", type: a.dataset.type || "" };
   });
 
   function renderNotFound() {
