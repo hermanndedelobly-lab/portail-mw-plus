@@ -460,3 +460,44 @@ a.card:hover { transform: translateY(-3px); border-color: var(--gold); }
   .grid--rubriques { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 560px) { .grid--rubriques { grid-template-columns: minmax(0, 1fr); } }
+
+/* ===== Villes, quartiers, acteurs ===== */
+.villes-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); margin-top: 20px; }
+.ville-card__pin { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, var(--orange), var(--brand)); }
+.ville-card__pin .ico { width: 20px; height: 20px; }
+.ville-card__stats { color: var(--text) !important; font-size: .9rem; }
+.ville { display: grid; gap: 14px; }
+.ville__stats { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.ville__stats > div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 10px 16px; display: grid; min-width: 110px; }
+.ville__stats b { font: 800 1.6rem/1.1 var(--serif); color: var(--brand); font-variant-numeric: tabular-nums; }
+.ville__stats span { font-size: .8rem; color: var(--muted); }
+.ville__stats .btn { margin-left: auto; }
+.ville__h { font-size: 1.3rem; margin: 14px 0 0; }
+.ville__src { margin: 0; font-size: .82rem; color: var(--muted); }
+.qgrid, .sgrid { display: flex; flex-wrap: wrap; gap: 8px; }
+.qchip, .schip { font: 500 .88rem var(--sans); color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.qchip small { color: var(--muted); font-variant-numeric: tabular-nums; }
+.schip b { min-width: 22px; padding: 1px 7px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: .76rem; text-align: center; font-variant-numeric: tabular-nums; }
+.schip.is-empty { color: var(--muted); }
+.schip.is-empty b { background: var(--surface-2); color: var(--muted); }
+.qchip:hover, .schip:hover { border-color: var(--brand); }
+.qchip[aria-pressed="true"], .schip[aria-pressed="true"] { background: var(--brand); border-color: var(--brand); color: var(--on-brand); }
+.qchip[aria-pressed="true"] small { color: var(--on-brand); }
+.schip[aria-pressed="true"] b { background: rgba(255,255,255,.25); color: var(--on-brand); }
+.acteurs { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }
+.acteur { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.acteur__top { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.acteur .pill { font-size: .62rem; }
+.acteur h3 { font-family: var(--sans); font-size: 1rem; font-weight: 700; margin: 2px 0 0; }
+.acteur__act { margin: 0; color: var(--muted); font-size: .9rem; }
+.acteur__infos { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: .86rem; }
+.acteur__infos li { display: flex; gap: 6px; align-items: flex-start; }
+.acteur__infos .ico { margin-top: 3px; color: var(--brand); }
+.acteur__infos a { color: var(--text); font-weight: 600; }
+.acteur__desc { margin: 0; font-size: .82rem; color: var(--muted); }
+.acteur__src { margin: auto 0 0; padding-top: 6px; font-size: .74rem; color: var(--muted); border-top: 1px dashed var(--line); }
+.badge { font-size: .66rem; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 3px 8px; border-radius: 999px; background: rgba(240,138,0,.14); color: #a85d00; }
+.badge--ok { background: var(--brand-soft); color: var(--brand); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .badge:not(.badge--ok) { color: #ffb24d; } }
+:root[data-theme="dark"] .badge:not(.badge--ok) { color: #ffb24d; }
+@media (max-width: 560px) { .ville__stats > div { min-width: 0; flex: 1 1 30%; } .ville__stats .btn { margin-left: 0; width: 100%; justify-content: center; } }

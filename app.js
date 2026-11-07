@@ -234,7 +234,7 @@
 
       '<section class="villes"><div class="wrap villes__row"><ul class="villes__list" aria-label="Villes du pays wê">' +
       (A.villes || []).map(function (v) {
-        return '<li><a href="#tourisme--villages"><span class="villes__pin">' + ico("pin") + "</span>" + esc(v) + "</a></li>";
+        return '<li><a href="#ville--' + slug(v) + '"><span class="villes__pin">' + ico("pin") + "</span>" + esc(v) + "</a></li>";
       }).join("") + '</ul><div class="villes__links"><a href="#tourisme--villages">' + ico("grid") + "<span>Tous les villages</span></a>" +
       '<a href="#actualites--evenements">' + ico("cal") + "<span>Agenda</span></a></div></div></section>" +
 
@@ -299,6 +299,7 @@
       case "actualites": body = actualites(p); break;
       case "annuaire": body = annuaire(p); break;
       case "formulaire": body = formulaire(p); break;
+      case "villes": body = figure(p.image, p.titre) + paras(p.texte) + '<div class="grid villes-grid" id="villes-grid"><p class="muted">Chargement des villes…</p></div>'; break;
       default:
         body = figure(p.image, p.titre) + paras(p.texte) + (p.aCompleter ? aCompleter : "");
     }
@@ -339,6 +340,14 @@
   }
 
   var hooks = {
+    villes: function () {
+      Promise.all(villesListe().map(function (v) {
+        return chargerVille(v.id).catch(function () { return { id: v.id, nom: v.nom, quartiers: [], acteurs: [] }; });
+      })).then(function (list) {
+        var g = document.getElementById("villes-grid");
+        if (g) g.innerHTML = list.map(villeCard).join("");
+      });
+    },
     dictionnaire: function () {
       var q = document.getElementById("q"), cat = document.getElementById("cat"), out = document.getElementById("results");
       function run() {
@@ -415,7 +424,21 @@
 
   /* Formulaires : envoyés par Netlify Forms (copie de secours si l’envoi échoue) */
   function formulaire(p) {
+    var pv = prefill; prefill = {};
     var champs = {
+      activite:
+        '<div class="row"><label>Nom de l’activité ou de l’entreprise<input class="input" name="nom" required></label>' +
+        '<label>Secteur<select class="select input" name="secteur" required>' + SECTEURS.map(function (s) { return "<option>" + esc(s) + "</option>"; }).join("") + "</select></label></div>" +
+        '<div class="row"><label>Ville<select class="select input" name="ville" required>' + villesListe().map(function (v) {
+          return "<option" + (v.nom === pv.ville ? " selected" : "") + ">" + esc(v.nom) + "</option>"; }).join("") + "</select></label>" +
+        '<label>Quartier<input class="input" name="quartier" value="' + esc(pv.quartier || "") + '"></label></div>' +
+        '<div class="row"><label>Adresse ou repère <span class="hint">(ex. : près du marché central)</span><input class="input" name="adresse"></label>' +
+        '<label>Téléphone<input class="input" name="telephone" type="tel" autocomplete="tel"></label></div>' +
+        '<div class="row"><label>Responsable<input class="input" name="responsable" autocomplete="name"></label>' +
+        '<label>E-mail <span class="hint">(facultatif)</span><input class="input" name="email" type="email" autocomplete="email"></label></div>' +
+        '<label>Description de l’activité<textarea class="input" name="description" rows="4"></textarea></label>' +
+        '<label>S’agit-il d’une correction ?<select class="select input" name="type"><option>Nouvelle inscription</option><option>Correction d’une fiche existante</option><option>Signaler une activité fermée</option></select></label>' +
+        '<label style="display:flex;gap:8px;align-items:flex-start;font-weight:400"><input type="checkbox" name="accord" value="oui" required> Je confirme que ces informations sont exactes et j’accepte leur publication sur le portail.</label>',
       contact:
         '<div class="row"><label>Nom<input class="input" name="nom" required autocomplete="name"></label>' +
         '<label>E-mail<input class="input" name="email" type="email" required autocomplete="email"></label></div>' +
@@ -449,6 +472,123 @@
       '<a class="btn btn--gold" href="#">Ouvrir ma messagerie</a></div></div></form>';
   }
 
+  /* ---------- Villes, quartiers et acteurs économiques ---------- */
+  var SECTEURS = ["Santé", "Pharmacie", "Commerce", "Restauration", "Hôtellerie & hébergement", "Agriculture & coopératives",
+    "Éducation", "Transport", "Énergie & carburant", "BTP & construction", "Informatique & télécoms", "Banque & finance",
+    "Artisanat", "Beauté & mode", "Culture & loisirs", "Administration & services publics", "Autres services"];
+  var villesCache = {}, prefill = {};
+  function slug(s) { return norm(s).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
+  function villesListe() { return ((S.accueil || {}).villes || []).map(function (v) { return { nom: v, id: slug(v) }; }); }
+  function chargerVille(id) {
+    if (villesCache[id]) return Promise.resolve(villesCache[id]);
+    return lire("villes/" + id + ".json").then(function (v) {
+      v.id = id; v.quartiers = v.quartiers || []; v.acteurs = v.acteurs || []; villesCache[id] = v; return v;
+    });
+  }
+  function villeCard(v) {
+    var n = v.acteurs.length, q = v.quartiers.length;
+    return '<a class="card ville-card" href="#ville--' + v.id + '"><span class="ville-card__pin">' + ico("pin") + "</span><h3>" + esc(v.nom) + "</h3>" +
+      '<p class="muted">Région : ' + esc(v.region || "") + "</p>" +
+      (n || q ? '<p class="ville-card__stats"><b>' + q + "</b> quartiers · <b>" + n + "</b> acteurs recensés</p>"
+        : '<p class="ville-card__stats">Recensement à venir</p>') +
+      '<span class="card__more">Voir la ville ' + ico("arrow") + "</span></a>";
+  }
+
+  function renderVille(id) {
+    var base = villesListe().filter(function (v) { return v.id === id; })[0];
+    if (!base) { renderNotFound(); return; }
+    document.title = base.nom + " · MW+";
+    main.innerHTML = pageHead("Nos villes", base.nom, "Chargement…", '<a href="#accueil">Accueil</a> › <a href="#tourisme--villages">Nos villages</a> › ' + esc(base.nom));
+    chargerVille(id).then(function (v) {
+      if (location.hash !== "#ville--" + id) return;
+      var etat = { quartier: "", secteur: "", q: "" };
+      var compteQ = {}, compteS = {};
+      v.acteurs.forEach(function (a) {
+        compteQ[a.quartier || ""] = (compteQ[a.quartier || ""] || 0) + 1;
+        compteS[a.secteur] = (compteS[a.secteur] || 0) + 1;
+      });
+      var secteurs = SECTEURS.concat(uniq(v.acteurs.map(function (a) { return a.secteur; })).filter(function (s) { return SECTEURS.indexOf(s) < 0; }));
+      var sansQuartier = compteQ[""] || 0;
+      main.innerHTML = pageHead("Région du " + (v.region || ""), v.nom, v.presentation || "Le recensement des quartiers et des activités de cette ville commence bientôt.",
+          '<a href="#accueil">Accueil</a> › <a href="#tourisme--villages">Nos villages</a> › ' + esc(v.nom)) +
+        '<section class="section section--tight"><div class="wrap ville">' +
+        '<div class="ville__stats"><div><b>' + v.quartiers.length + "</b><span>quartiers</span></div><div><b>" + v.acteurs.length +
+        "</b><span>acteurs recensés</span></div><div><b>" + Object.keys(compteS).length + "</b><span>secteurs représentés</span></div>" +
+        '<a class="btn btn--brand" href="#business--inscrire" data-ville="' + esc(v.nom) + '">Inscrire mon activité</a></div>' +
+
+        (v.quartiers.length ? '<h2 class="ville__h">Quartiers</h2><div class="qgrid" id="quartiers">' +
+          '<button type="button" class="qchip" aria-pressed="true" data-q="">Toute la ville <small>' + v.acteurs.length + "</small></button>" +
+          v.quartiers.map(function (q) {
+            return '<button type="button" class="qchip" aria-pressed="false" data-q="' + esc(q.nom) + '" title="' + esc(q.description || "") + '">' + esc(q.nom) +
+              " <small>" + (compteQ[q.nom] || 0) + "</small></button>";
+          }).join("") + "</div>" +
+          (v.sourcesQuartiers && v.sourcesQuartiers.length ? '<p class="ville__src">Liste des quartiers : ' + v.sourcesQuartiers.map(function (s) {
+            return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.titre) + "</a>";
+          }).join(", ") + "</p>" : "") +
+          (sansQuartier ? '<p class="ville__src">' + sansQuartier + " acteur" + (sansQuartier > 1 ? "s" : "") + " dont le quartier reste à préciser.</p>" : "") : "") +
+
+        '<h2 class="ville__h">Secteurs d’activité</h2><div class="sgrid" id="secteurs">' +
+        secteurs.map(function (s) {
+          var n = compteS[s] || 0;
+          return '<button type="button" class="schip' + (n ? "" : " is-empty") + '" aria-pressed="false" data-s="' + esc(s) + '"><span>' + esc(s) + "</span><b>" + n + "</b></button>";
+        }).join("") + "</div>" +
+
+        '<div class="search" role="search"><input class="input" id="q" type="search" placeholder="Rechercher un nom, une activité, une adresse…" aria-label="Rechercher un acteur"></div>' +
+        '<p class="muted" id="ville-count"></p><div class="acteurs" id="acteurs"></div>' +
+        '<div class="notice"><p><strong>Annuaire en construction</strong>Les fiches viennent d’annuaires et d’articles publics, citées à chaque fois. ' +
+        "Elles portent la mention « À vérifier » tant que l’acteur ne les a pas confirmées. Une erreur, un oubli ? " +
+        '<a href="#business--inscrire" data-ville="' + esc(v.nom) + '">Inscrivez ou corrigez une activité</a>.</p></div></div></section>';
+
+      var out = document.getElementById("acteurs"), count = document.getElementById("ville-count");
+      function fiche(a) {
+        var tel = (a.telephone || "").split("/").map(function (t) { return t.trim(); }).filter(Boolean);
+        return '<article class="acteur"><div class="acteur__top"><span class="pill">' + esc(a.secteur) + "</span>" +
+          (a.verifie ? '<span class="badge badge--ok">Vérifié</span>' : '<span class="badge">À vérifier</span>') + "</div>" +
+          "<h3>" + esc(a.nom) + "</h3>" + (a.activite ? '<p class="acteur__act">' + esc(a.activite) + "</p>" : "") +
+          '<ul class="acteur__infos">' +
+          '<li>' + ico("pin") + "<span>" + esc([a.quartier ? "Quartier " + a.quartier : "Quartier à préciser", a.adresse].filter(Boolean).join(" · ")) + "</span></li>" +
+          tel.map(function (t) { return "<li>" + ico("phone") + '<a href="tel:' + esc(t.replace(/\s/g, "")) + '">' + esc(t) + "</a></li>"; }).join("") +
+          "</ul>" + (a.description ? '<p class="acteur__desc">' + esc(a.description) + "</p>" : "") +
+          (a.source ? '<p class="acteur__src">Source : ' + (a.sourceUrl ? '<a href="' + esc(a.sourceUrl) + '" target="_blank" rel="noopener">' + esc(a.source) + "</a>" : esc(a.source)) + "</p>" : "") +
+          "</article>";
+      }
+      function run() {
+        var t = norm(etat.q);
+        var r = v.acteurs.filter(function (a) {
+          return (!etat.quartier || a.quartier === etat.quartier) && (!etat.secteur || a.secteur === etat.secteur) &&
+            (!t || norm([a.nom, a.activite, a.adresse, a.quartier, a.description].join(" ")).indexOf(t) > -1);
+        }).sort(function (a, b) { return a.secteur === b.secteur ? a.nom.localeCompare(b.nom, "fr") : SECTEURS.indexOf(a.secteur) - SECTEURS.indexOf(b.secteur); });
+        count.textContent = r.length + " acteur" + (r.length > 1 ? "s" : "") +
+          (etat.quartier ? " · quartier " + etat.quartier : "") + (etat.secteur ? " · " + etat.secteur : "");
+        out.innerHTML = r.length ? r.map(fiche).join("") :
+          '<div class="empty"><strong>Aucun acteur recensé ici pour l’instant</strong>Vous en connaissez un ? <a href="#business--inscrire" data-ville="' +
+          esc(v.nom) + '" data-quartier="' + esc(etat.quartier) + '">Inscrivez-le</a>.</div>';
+      }
+      main.onclick = function (e) {
+        var b = e.target.closest("[data-q], [data-s]");
+        if (!b) return;
+        if (b.hasAttribute("data-q")) {
+          etat.quartier = b.dataset.q;
+          main.querySelectorAll("[data-q]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+        } else {
+          etat.secteur = etat.secteur === b.dataset.s ? "" : b.dataset.s;
+          main.querySelectorAll("[data-s]").forEach(function (x) { x.setAttribute("aria-pressed", String(x.dataset.s === etat.secteur)); });
+        }
+        run();
+      };
+      document.getElementById("q").addEventListener("input", function () { etat.q = this.value; run(); });
+      run();
+    }).catch(function () {
+      main.innerHTML = pageHead("Nos villes", base.nom, "Cette ville n’a pas encore de fiche.") +
+        '<section class="section"><div class="wrap"><a class="btn btn--brand" href="#business--inscrire">Inscrire une activité</a></div></section>';
+    });
+  }
+  // Pré-remplissage du formulaire d'inscription depuis une page de ville
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a[data-ville]");
+    if (a) prefill = { ville: a.dataset.ville, quartier: a.dataset.quartier || "" };
+  });
+
   function renderNotFound() {
     document.title = "Page introuvable · MW+";
     main.innerHTML = pageHead("Erreur", "Page introuvable", "Cette page n’existe pas ou a été déplacée.") +
@@ -461,8 +601,10 @@
     var parts = location.hash.replace(/^#\/?/, "").split(/--|\//).filter(Boolean);
     var s = parts[0] ? section(parts[0]) : null;
     clearInterval(timer);
+    main.onclick = null;
     if (!parts.length || (s && s.id === "accueil")) renderHome();
     else if (parts[0] === "recherche") renderSearch();
+    else if (parts[0] === "ville") renderVille(parts[1]);
     else if (!s) renderNotFound();
     else if (!parts[1]) renderSection(s);
     else {

@@ -1,0 +1,596 @@
+{
+  "nom": "Duékoué",
+  "region": "Guémon",
+  "statut": "pilote",
+  "presentation": "Chef-lieu de la région du Guémon, Duékoué est un carrefour routier de l'ouest ivoirien, entre Man, Guiglo et Daloa. La ville compte 12 quartiers, six au centre-ville et six en périphérie.",
+  "sourcesQuartiers": [
+    {
+      "titre": "Larissa Bley, revue ACAREF (2022)",
+      "url": "https://revues.acaref.net/wp-content/uploads/sites/3/2022/10/Larissa-Bley.pdf"
+    },
+    {
+      "titre": "Regards Suds",
+      "url": "https://regardsuds.org/territoires-de-la-violence-intercommunautaire-et-sentiment-dinsecurite-dans-lespace-urbain-de-duekoue-ouest-cote-divoire/"
+    }
+  ],
+  "quartiers": [
+    {
+      "nom": "Résidentiel 1",
+      "description": "Centre-ville."
+    },
+    {
+      "nom": "Résidentiel 2",
+      "description": "Centre-ville."
+    },
+    {
+      "nom": "Belleville",
+      "description": "Centre-ville."
+    },
+    {
+      "nom": "Représentant",
+      "description": "Centre-ville."
+    },
+    {
+      "nom": "Latif",
+      "description": "Centre-ville."
+    },
+    {
+      "nom": "Guéré",
+      "description": "Centre-ville."
+    },
+    {
+      "nom": "Carrefour",
+      "description": "Périphérie. Aussi appelé Djahi Bernard (ou Diaye Bernard), sur la route de Daloa."
+    },
+    {
+      "nom": "Kôkôman",
+      "description": "Périphérie. Orthographié aussi Kokoma."
+    },
+    {
+      "nom": "Toguéi",
+      "description": "Périphérie. Orthographié aussi Toguéhi."
+    },
+    {
+      "nom": "Artisanat",
+      "description": "Périphérie."
+    },
+    {
+      "nom": "Père Thète",
+      "description": "Périphérie."
+    },
+    {
+      "nom": "Petit Duékoué",
+      "description": "Périphérie, vers Guitrozon."
+    }
+  ],
+  "acteurs": [
+    {
+      "nom": "Hôpital Général de Duékoué",
+      "secteur": "Santé",
+      "activite": "Hôpital public : urgences, maternité, pédiatrie, chirurgie, laboratoire, pharmacie",
+      "quartier": "",
+      "adresse": "Route de Daloa, en face de la mairie",
+      "telephone": "27 33 70 31 73 / 07 08 01 77 02",
+      "description": "Deux numéros différents selon les annuaires (Medivoire, Mamafrica).",
+      "source": "Medivoire",
+      "sourceUrl": "https://www.medivoire.com/en/hospital/hopital-general-de-douekoue-15cf7646",
+      "verifie": false
+    },
+    {
+      "nom": "Clinique Sainte Anne-Marie",
+      "secteur": "Santé",
+      "activite": "Clinique privée : médecine générale et spécialistes",
+      "quartier": "",
+      "adresse": "Route Man-Duékoué, près de l'hôtel Le Refuge",
+      "telephone": "07 07 30 36 58",
+      "description": "",
+      "source": "Mamafrica Santé",
+      "sourceUrl": "https://sante.mamafrica.net/listing/clinique-sainte-anne-marie/",
+      "verifie": false
+    },
+    {
+      "nom": "Clinique Médicale de Duékoué",
+      "secteur": "Santé",
+      "activite": "Clinique privée",
+      "quartier": "Carrefour",
+      "adresse": "Quartier Djahi Bernard, route de Daloa",
+      "telephone": "",
+      "description": "",
+      "source": "Réseau de soins MUGEF-CI (2020)",
+      "sourceUrl": "https://www.mugef-ci.com/documents/reseau-de-soins/exercice2020.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Centre de Santé Urbain Diaye Bernard",
+      "secteur": "Santé",
+      "activite": "Centre de santé urbain",
+      "quartier": "Carrefour",
+      "adresse": "Route Duékoué-Daloa",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/duekoue/sante",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie de la Gare",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "Près de la grande gare",
+      "telephone": "27 33 70 36 01",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/en/entreprises/pharmacie-de-la-gare-de-duekoue-duekoue-cote-divoire",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie de Duékoué",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "BP 34 Duékoué",
+      "telephone": "27 33 70 31 05",
+      "description": "Lun-ven 8 h-17 h, sam 9 h-13 h (selon l'annuaire).",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/pharmacie-de-duekoue-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie de la Paix",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "07 14 25 77 67 / 07 15 87 87 87",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/en/entreprises/pharmacie-de-la-paix-duekoue-duekoue-cote-divoire",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie Nikla",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie Wahon",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "Royal Hôtel de Duékoué",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel avec piscine",
+      "quartier": "",
+      "adresse": "Route de Guiglo, BP 194",
+      "telephone": "",
+      "description": "",
+      "source": "Yelloci",
+      "sourceUrl": "https://www.yelloci.com/company/9064/ROYAL_HOTEL_DE_DUEKOUE",
+      "verifie": false
+    },
+    {
+      "nom": "Complexe hôtelier Les Résidences Dahoua",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Complexe hôtelier",
+      "quartier": "",
+      "adresse": "Route Duékoué-Guiglo, BP 357, à environ 6 km du centre",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/en/entreprises/complexe-hotelier-dahoua-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Seneve",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "07 87 91 90 98",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "Assrin Hôtel",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel avec piscine",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripinafrica",
+      "sourceUrl": "https://www.tripinafrica.com/hotels/duekoue",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Le Refuge",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "Route Man-Duékoué",
+      "telephone": "",
+      "description": "",
+      "source": "Timbu",
+      "sourceUrl": "https://timbu.com/ivory-coast/hotels/duekoue",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Golou Marie",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Paye",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Vei",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Goma",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Amoitrin",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Amitié",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Goshen Hotel",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Les Cascades",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripadvisor",
+      "sourceUrl": "https://www.tripadvisor.com/Hotels-g8398199-Duekoue_Moyen_Cavally_Region-Hotels.html",
+      "verifie": false
+    },
+    {
+      "nom": "Matchaix Auberge",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Auberge, établissement touristique",
+      "quartier": "",
+      "adresse": "Village de Guitrozon (département de Duékoué)",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "Lycée moderne de Duékoué",
+      "secteur": "Éducation",
+      "activite": "Lycée public : environ 6 000 élèves (2021-2022)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Abidjan.net (2022)",
+      "sourceUrl": "https://news.abidjan.net/articles/711575/des-anciens-eleves-redonnent-de-leclat-a-un-batiment-du-lycee-moderne-duekoue",
+      "verifie": false
+    },
+    {
+      "nom": "Collège Vignon",
+      "secteur": "Éducation",
+      "activite": "Établissement secondaire privé",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Classement BAC 2022, Linfodrome",
+      "sourceUrl": "https://www.linfodrome.com/media/article/attachments/79797-bac-2022-classement-etablissement.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Collège Saint Pierre du Guémon",
+      "secteur": "Éducation",
+      "activite": "Établissement secondaire",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Liste des établissements par DREN (Scribd)",
+      "sourceUrl": "https://fr.scribd.com/document/421642702/Liste-Des-Etablissements-Publics-Et-Prive-Par-Dren",
+      "verifie": false
+    },
+    {
+      "nom": "Marché central de Duékoué",
+      "secteur": "Commerce",
+      "activite": "Marché : produits frais, vivriers, articles ménagers",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Kupi, guide de voyage",
+      "sourceUrl": "https://www.kupi.com/en/explore/ivory-coast/duekoue",
+      "verifie": false
+    },
+    {
+      "nom": "Société Générale d'Achat et de Distribution",
+      "secteur": "Commerce",
+      "activite": "Commerce général",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "27 33 70 30 81",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "Société Ivoirienne de Commerce et de Distribution",
+      "secteur": "Commerce",
+      "activite": "Commerce général",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "27 33 70 32 98",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "Gare UTB de Duékoué",
+      "secteur": "Transport",
+      "activite": "Compagnie de transport interurbain",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Réouverture annoncée en avril 2012 : à confirmer aujourd'hui.",
+      "source": "Blog UTB (2012)",
+      "sourceUrl": "http://utbintranet.blogspot.com/2012/11/bienvenue-utb.html",
+      "verifie": false
+    },
+    {
+      "nom": "Station Total, face au marché central",
+      "secteur": "Énergie & carburant",
+      "activite": "Station-service",
+      "quartier": "",
+      "adresse": "En face du marché central",
+      "telephone": "",
+      "description": "",
+      "source": "Liste des points Service Proxi, Advans CI",
+      "sourceUrl": "https://www.advanscotedivoire.com/wp-content/uploads/sites/8/2024/10/Distributeurs-agrees_station-total.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Station Total, gare routière",
+      "secteur": "Énergie & carburant",
+      "activite": "Station-service",
+      "quartier": "",
+      "adresse": "Gare routière",
+      "telephone": "",
+      "description": "",
+      "source": "Liste des points Service Proxi, Advans CI",
+      "sourceUrl": "https://www.advanscotedivoire.com/wp-content/uploads/sites/8/2024/10/Distributeurs-agrees_station-total.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Ets Lonaya",
+      "secteur": "BTP & construction",
+      "activite": "Bâtiment et travaux publics",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "GTEK Informatique",
+      "secteur": "Informatique & télécoms",
+      "activite": "Informatique",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/ville/duekoue/",
+      "verifie": false
+    },
+    {
+      "nom": "CAGD, Coopérative agricole Guelasse de Duékoué",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Coopérative agricole",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/cagd-cooperative-agricole-guelasse-de-duekoue-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "COFRADD, Coopérative Fraternité Débaya de Duékoué",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Coopérative agricole",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/cofradd-cooperative-fraternite-debaya-de-duekoue-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "CALD, Coopérative agricole Lafissou de Duékoué",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Coopérative agricole",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/cald-cooperative-agricole-lafissou-de-duekoue-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "CAPED, Coopérative des producteurs agricoles épanouis de Duékoué",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Coopérative agricole",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/caped-cooperative-des-producteurs-agricoles-epanouis-de-duekoue-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "CEPAD, Coopérative d'exploitation des produits agricoles de Duékoué",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Coopérative agricole",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/cepad-cooperative-dexploitation-des-produits-agricole-de-duekoue-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "CEAO, Coopérative des exploitants agriculteurs de l'Ouest",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Coopérative agricole",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/ceao-cooperative-des-exploitants-agriculteurs-de-louest-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "COOPAYED, Coopérative agricole Yebo Yokon de Duékoué",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Coopérative agricole",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/entreprises/coopayed-cooperative-agricole-yebo-yokon-de-duekoue-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "CHC, Compagnie Hévéicole du Cavally",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Hévéaculture (caoutchouc naturel)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/en/entreprises/chc-compagnie-heveicole-du-cavally-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "West Agro Invest Addict",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Agro-industrie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/en/entreprises/west-agro-invest-addict-abidjan-cote-divoire/",
+      "verifie": false
+    },
+    {
+      "nom": "Mairie de Duékoué",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de Duékoué)",
+      "quartier": "",
+      "adresse": "Route de Daloa, en face de l'Hôpital général",
+      "telephone": "",
+      "description": "",
+      "source": "Medivoire",
+      "sourceUrl": "https://www.medivoire.com/en/hospital/hopital-general-de-douekoue-15cf7646",
+      "verifie": false
+    }
+  ]
+}

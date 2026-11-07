@@ -132,6 +132,961 @@ collections:
         name: exemple
         widget: text
         required: false
+- name: villes
+  label: Villes et acteurs
+  files:
+  - label: Duékoué
+    name: duekoue
+    file: content/villes/duekoue.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
+  - label: Guiglo
+    name: guiglo
+    file: content/villes/guiglo.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
+  - label: Bangolo
+    name: bangolo
+    file: content/villes/bangolo.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
+  - label: Blolequin
+    name: blolequin
+    file: content/villes/blolequin.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
+  - label: Toulépleu
+    name: toulepleu
+    file: content/villes/toulepleu.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
+  - label: Facobly
+    name: facobly
+    file: content/villes/facobly.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
+  - label: Kouibly
+    name: kouibly
+    file: content/villes/kouibly.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
+  - label: Taï
+    name: tai
+    file: content/villes/tai.json
+    fields:
+    - label: Nom de la ville
+      name: nom
+      widget: string
+    - label: Région
+      name: region
+      widget: string
+    - label: Statut
+      name: statut
+      widget: select
+      options:
+      - label: Ville pilote
+        value: pilote
+      - label: Recensement en cours
+        value: en-cours
+      - label: À venir
+        value: a-venir
+      - label: Recensement complet
+        value: complet
+    - label: Présentation
+      name: presentation
+      widget: text
+      required: false
+    - label: Sources de la liste des quartiers
+      label_singular: source
+      name: sourcesQuartiers
+      widget: list
+      required: false
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Adresse web
+        name: url
+        widget: string
+        required: false
+    - label: Quartiers
+      label_singular: quartier
+      name: quartiers
+      widget: list
+      required: false
+      summary: '{{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Description
+        name: description
+        widget: string
+        required: false
+    - label: Acteurs (entreprises, commerces, services…)
+      label_singular: acteur
+      name: acteurs
+      widget: list
+      required: false
+      summary: '{{fields.secteur}} · {{fields.nom}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Secteur
+        name: secteur
+        widget: select
+        options:
+        - Santé
+        - Pharmacie
+        - Commerce
+        - Restauration
+        - Hôtellerie & hébergement
+        - Agriculture & coopératives
+        - Éducation
+        - Transport
+        - Énergie & carburant
+        - BTP & construction
+        - Informatique & télécoms
+        - Banque & finance
+        - Artisanat
+        - Beauté & mode
+        - Culture & loisirs
+        - Administration & services publics
+        - Autres services
+      - label: Activité
+        name: activite
+        widget: string
+        required: false
+      - label: Quartier (écrit exactement comme dans la liste des quartiers)
+        name: quartier
+        widget: string
+        required: false
+      - label: Adresse ou repère
+        name: adresse
+        widget: string
+        required: false
+      - label: Téléphone (plusieurs numéros séparés par /)
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+      - label: Source (nom)
+        name: source
+        widget: string
+        required: false
+        hint: 'Ex. : Annuaire CI, ou « Inscription par l’acteur »'
+      - label: Source (adresse web)
+        name: sourceUrl
+        widget: string
+        required: false
+      - label: Vérifié (confirmé par l’acteur ou sur place)
+        name: verifie
+        widget: boolean
+        default: false
+        required: false
 - name: annuaire
   label: Annuaire Wê Business
   files:
@@ -220,6 +1175,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -253,6 +1210,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Langue wê
     name: langue
     file: content/rubriques/langue.json
@@ -300,6 +1259,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -333,6 +1294,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Culture & Traditions
     name: culture
     file: content/rubriques/culture.json
@@ -380,6 +1343,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -413,6 +1378,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Musique & Artistes
     name: musique
     file: content/rubriques/musique.json
@@ -460,6 +1427,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -493,6 +1462,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Tourisme & Découverte
     name: tourisme
     file: content/rubriques/tourisme.json
@@ -540,6 +1511,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -573,6 +1546,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Médiathèque
     name: mediatheque
     file: content/rubriques/mediatheque.json
@@ -620,6 +1595,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -653,6 +1630,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Actualités (textes des pages)
     name: actualites
     file: content/rubriques/actualites.json
@@ -700,6 +1679,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -733,6 +1714,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Wê Business
     name: business
     file: content/rubriques/business.json
@@ -780,6 +1763,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -813,6 +1798,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
   - label: Contact
     name: contact
     file: content/rubriques/contact.json
@@ -860,6 +1847,8 @@ collections:
           value: annuaire
         - label: Formulaire
           value: formulaire
+        - label: Liste des villes
+          value: villes
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -893,6 +1882,8 @@ collections:
           value: partenaire
         - label: Proposer un contenu
           value: contenu
+        - label: Inscrire une activité
+          value: activite
 - name: reglages
   label: Réglages du site
   files:

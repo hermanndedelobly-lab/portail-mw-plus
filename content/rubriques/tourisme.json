@@ -6,12 +6,12 @@
   "pages": [
     {
       "id": "villages",
-      "titre": "Nos villages",
-      "type": "texte",
-      "chapo": "Chaque village a son histoire, ses lignages, ses fêtes et ses figures.",
-      "texte": "Une fiche par village : localisation, histoire, chefferie, sites remarquables, fêtes et contacts utiles.\n\nLes fiches seront regroupées par département : Duékoué, Guiglo, Bangolo, Blolequin, Toulépleu, Facobly, Kouibly, Taï…",
+      "titre": "Nos villes et villages",
+      "type": "villes",
+      "chapo": "Chaque ville du pays wê, ses quartiers et toutes ses activités : santé, commerce, hôtellerie, agriculture, éducation, transport…",
+      "texte": "Choisissez une ville pour découvrir ses quartiers et les acteurs de son économie. Duékoué est la première ville recensée ; les autres suivront.",
       "image": "",
-      "aCompleter": true
+      "aCompleter": false
     },
     {
       "id": "sites",

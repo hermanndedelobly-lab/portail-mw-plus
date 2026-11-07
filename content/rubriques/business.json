@@ -14,6 +14,16 @@
       "aCompleter": false
     },
     {
+      "id": "inscrire",
+      "titre": "Inscrire mon activité",
+      "type": "formulaire",
+      "formulaire": "activite",
+      "chapo": "Commerçant, artisan, entreprise, coopérative, service public : faites figurer votre activité dans la fiche de votre ville et de votre quartier. C’est gratuit.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false
+    },
+    {
       "id": "commerces",
       "titre": "Commerces et services",
       "type": "annuaire",
