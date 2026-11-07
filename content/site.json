@@ -25,5 +25,10 @@
     "instagram": "",
     "youtube": "",
     "tiktok": ""
+  },
+  "application": {
+    "version": "1.0",
+    "fichier": "telecharger/MWplus-1.0.apk",
+    "taille": "165 Ko"
   }
 }

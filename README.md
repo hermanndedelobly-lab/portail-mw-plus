@@ -48,3 +48,8 @@ npx decap-server        # dans le dossier du site, laisser ouvert
 python3 -m http.server  # dans un second terminal
 ```
 Puis ouvrir `http://localhost:8000/` (site) et `http://localhost:8000/admin/` (administration, sans connexion GitHub : les modifications sont écrites directement dans `content/`).
+
+## Application Android
+- Le code est dans `android/` : une application légère qui affiche le portail en plein écran (les nouveautés publiées apparaissent sans mise à jour).
+- Fabriquer une nouvelle version : `MWPLUS_KEYSTORE=/chemin/mwplus.jks MWPLUS_KEYPASS=… ./android/build.sh 1.1 2`, puis copier l'APK dans `telecharger/` et mettre à jour `application` dans `content/site.json`.
+- **La clé de signature (`mwplus.jks`) n'est pas dans ce dépôt.** Gardez-la précieusement : sans elle, impossible de publier une mise à jour installable par-dessus l'ancienne version.

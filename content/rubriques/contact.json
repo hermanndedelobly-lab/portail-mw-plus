@@ -14,6 +14,15 @@
       "aCompleter": false
     },
     {
+      "id": "application",
+      "titre": "Application mobile",
+      "type": "application",
+      "chapo": "MW+ dans votre poche : toute la culture wê sur votre téléphone Android, toujours à jour.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false
+    },
+    {
       "id": "nous-contacter",
       "titre": "Nous contacter",
       "type": "formulaire",

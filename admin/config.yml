@@ -1177,6 +1177,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1261,6 +1263,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1345,6 +1349,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1429,6 +1435,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1513,6 +1521,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1597,6 +1607,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1681,6 +1693,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1765,6 +1779,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text
@@ -1849,6 +1865,8 @@ collections:
           value: formulaire
         - label: Liste des villes
           value: villes
+        - label: Application mobile
+          value: application
       - label: Chapeau (phrase d'introduction)
         name: chapo
         widget: text

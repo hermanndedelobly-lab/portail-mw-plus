@@ -504,3 +504,11 @@ a.card:hover { transform: translateY(-3px); border-color: var(--gold); }
 .acteur__fix { display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; margin-top: 2px; padding: 5px 10px; border-radius: 999px; border: 1px dashed var(--brand); color: var(--brand); font-size: .8rem; font-weight: 600; text-decoration: none; }
 .acteur__fix:hover { background: var(--brand-soft); }
 .form__intro { margin: 0; padding: 10px 14px; border-radius: 10px; background: var(--brand-soft); }
+
+/* Application mobile */
+.appli { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; }
+.appli img { width: 96px; height: 96px; }
+.appli h2 { margin: 0 0 4px; }
+.appli p { margin: 0 0 12px; }
+.etapes { display: grid; gap: 10px; padding-left: 22px; }
+.etapes li { padding-left: 4px; }

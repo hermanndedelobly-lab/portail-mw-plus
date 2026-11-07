@@ -94,7 +94,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
     document.getElementById("footer-links").innerHTML = S.sections.map(function (s) {
       return '<a href="' + href(s.pages.length ? s.id : "") + '">' + esc(s.label) + "</a>";
-    }).join("");
+    }).join("") + (/MWPlusApp/.test(navigator.userAgent) ? "" : '<a href="#contact--application"><b>📱 Application Android</b></a>');
     var R = S.reseaux || {}, tel = (S.telephone || "").trim(), wa = (S.whatsapp || "").trim();
     function bloc(icon, label, valeur, lien) {
       return '<div class="contactbar__item"><span class="contactbar__ico">' + ico(icon) + "</span><div><small>" + label + "</small>" +
@@ -299,6 +299,7 @@
       case "actualites": body = actualites(p); break;
       case "annuaire": body = annuaire(p); break;
       case "formulaire": body = formulaire(p); break;
+      case "application": body = application(); break;
       case "villes": body = figure(p.image, p.titre) + paras(p.texte) + '<div class="grid villes-grid" id="villes-grid"><p class="muted">Chargement des villes…</p></div>'; break;
       default:
         body = figure(p.image, p.titre) + paras(p.texte) + (p.aCompleter ? aCompleter : "");
@@ -603,6 +604,24 @@
     var a = e.target.closest("a[data-ville]");
     if (a) prefill = { ville: a.dataset.ville, quartier: a.dataset.quartier || "", nom: a.dataset.nom || "", type: a.dataset.type || "" };
   });
+
+  /* ---------- Application mobile ---------- */
+  var DANS_APP = /MWPlusApp/.test(navigator.userAgent);
+  function application() {
+    var a = S.application || {};
+    if (DANS_APP) return '<div class="notice"><p><strong>Vous utilisez déjà l’application MW+.</strong>Elle se met à jour toute seule : chaque nouveauté publiée sur le portail y apparaît immédiatement.</p></div>';
+    return '<div class="appli"><img src="assets/logo-192.png" alt="" width="96" height="96"><div><h2>MW+ pour Android</h2>' +
+      '<p class="muted">Version ' + esc(a.version) + " · " + esc(a.taille) + " · Android 7 ou plus récent</p>" +
+      '<a class="btn btn--brand" href="' + esc(a.fichier) + '" download>Télécharger l’application</a></div></div>' +
+      '<h2 class="ville__h">Installer en 4 étapes</h2><ol class="etapes">' +
+      "<li><b>Téléchargez</b> le fichier avec le bouton ci-dessus, depuis votre téléphone Android.</li>" +
+      "<li><b>Ouvrez</b> le fichier téléchargé (notification « Téléchargement terminé » ou application <i>Fichiers</i>).</li>" +
+      "<li>Si le téléphone demande l’autorisation, appuyez sur <b>Paramètres</b> puis activez <b>« Autoriser cette source »</b>, et revenez en arrière.</li>" +
+      "<li>Appuyez sur <b>Installer</b>, puis sur <b>Ouvrir</b>. L’icône MW+ apparaît avec vos autres applications.</li></ol>" +
+      '<div class="notice"><p><strong>Pourquoi ce message de sécurité ?</strong>L’application n’est pas encore sur le Play Store : Android demande donc une confirmation. ' +
+      "Elle ne demande qu’un accès à internet, rien d’autre (ni contacts, ni photos, ni position).</p></div>" +
+      "<p>Sur iPhone, ouvrez le portail dans Safari, appuyez sur <b>Partager</b> puis <b>« Sur l’écran d’accueil »</b> : MW+ s’ajoute comme une application.</p>";
+  }
 
   function renderNotFound() {
     document.title = "Page introuvable · MW+";

@@ -12,3 +12,10 @@
   for = "/admin/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
+# Application Android à télécharger
+[[headers]]
+  for = "/telecharger/*.apk"
+  [headers.values]
+    Content-Type = "application/vnd.android.package-archive"
+    Content-Disposition = "attachment"

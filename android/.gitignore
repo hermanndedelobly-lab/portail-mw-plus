@@ -1,0 +1,4 @@
+.outils/
+.build/
+*.jks
+*.apk
