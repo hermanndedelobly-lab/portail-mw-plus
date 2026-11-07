@@ -353,10 +353,11 @@
           var r = T.filter(function (x) { return (!a || x.artiste === a) && (!t || norm([x.titre, x.artiste, x.album, x.genre].join(" ")).indexOf(t) > -1); });
           if (!T.length) { out.innerHTML = '<div class="empty"><strong>Les premiers titres arrivent bientôt</strong>Artiste wê ? <a href="#contact--proposer">Proposez votre musique</a>.</div>'; return; }
           out.innerHTML = r.length ? r.map(function (x) {
-            var src = x.audio || x.audioUrl;
+            var src = x.audio || x.audioUrl, yt = idYoutube(x.youtube);
             return '<article class="titre">' + (x.image ? '<img src="' + esc(x.image) + '" alt="" loading="lazy">' : '<span class="titre__note" aria-hidden="true">♪</span>') +
               '<div class="titre__corps"><h3>' + esc(x.titre) + "</h3><p>" + esc([x.artiste, x.album, x.annee, x.genre].filter(Boolean).join(" · ")) + "</p>" +
-              (src ? '<audio controls preload="none" src="' + esc(src) + '"></audio>' : "") +
+              (src ? '<audio controls preload="none" src="' + esc(src) + '"></audio>' :
+                yt ? '<button type="button" class="yt" data-yt="' + yt + '" aria-label="Écouter ' + esc(x.titre) + '"><img src="https://i.ytimg.com/vi/' + yt + '/hqdefault.jpg" alt="" loading="lazy"><span class="yt__play">▶ Écouter</span></button>' : "") +
               '<div class="titre__actions">' +
               (src && x.telechargement ? '<a class="btn btn--brand btn--sm" href="' + esc(src) + '" download>Télécharger</a>' : "") +
               (x.youtube ? '<a class="btn btn--line btn--sm" href="' + esc(x.youtube) + '" target="_blank" rel="noopener">Voir sur YouTube</a>' : "") +
@@ -364,6 +365,18 @@
           }).join("") : '<div class="empty">Aucun morceau ne correspond.</div>';
         }
         q.addEventListener("input", run); sel.addEventListener("change", run); run();
+        // lecture YouTube intégrée : la vidéo ne se charge qu'au clic
+        out.addEventListener("click", function (e) {
+          var b = e.target.closest(".yt");
+          if (!b) return;
+          out.querySelectorAll("iframe.yt__frame").forEach(function (f) { f.remove(); });
+          out.querySelectorAll(".yt[hidden]").forEach(function (x) { x.hidden = false; });
+          var f = document.createElement("iframe");
+          f.className = "yt__frame"; f.allow = "autoplay; encrypted-media; picture-in-picture"; f.allowFullscreen = true;
+          f.title = "Lecteur YouTube"; f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.yt + "?autoplay=1&rel=0";
+          b.hidden = true; b.parentNode.insertBefore(f, b);
+          out.querySelectorAll("audio").forEach(function (a) { a.pause(); });
+        });
         // un seul morceau à la fois
         out.addEventListener("play", function (e) { out.querySelectorAll("audio").forEach(function (a) { if (a !== e.target) a.pause(); }); }, true);
       }).catch(function () { out.innerHTML = '<div class="empty">La liste des morceaux n’a pas pu être chargée.</div>'; });
@@ -631,6 +644,11 @@
     var a = e.target.closest("a[data-ville]");
     if (a) prefill = { ville: a.dataset.ville, quartier: a.dataset.quartier || "", nom: a.dataset.nom || "", type: a.dataset.type || "" };
   });
+
+  function idYoutube(u) {
+    var m = String(u || "").match(/(?:youtu\.be\/|v=|\/shorts\/|\/embed\/|\/live\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : "";
+  }
 
   /* ---------- Application mobile ---------- */
   var DANS_APP = /MWPlusApp/.test(navigator.userAgent);

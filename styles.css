@@ -524,3 +524,8 @@ a.card:hover { transform: translateY(-3px); border-color: var(--gold); }
 .titre__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
 .titre details { margin-top: 8px; font-size: .9rem; }
 @media (max-width: 480px) { .titre { grid-template-columns: 56px minmax(0, 1fr); } .titre img, .titre__note { width: 56px; height: 56px; font-size: 1.5rem; } }
+.yt { position: relative; display: block; width: 100%; padding: 0; border: 0; border-radius: 10px; overflow: hidden; cursor: pointer; aspect-ratio: 16 / 9; max-width: 100%; background: #000; }
+.yt img { width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+.yt__play { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--brand); color: #fff; font: 700 .95rem var(--sans); padding: 10px 18px; border-radius: 999px; box-shadow: 0 4px 14px rgba(0,0,0,.35); }
+.yt:hover .yt__play { filter: brightness(1.1); }
+.yt__frame { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 10px; max-width: 100%; }
