@@ -32,10 +32,10 @@
     "taille": "165 Ko"
   },
   "firebase": {
-    "apiKey": "",
-    "authDomain": "",
-    "projectId": "",
-    "appId": ""
+    "apiKey": "AIzaSyBH5ZQwYN7HAZALaEA1wc0-V-GFSpn9G_M",
+    "authDomain": "mw-plus-edecd.firebaseapp.com",
+    "projectId": "mw-plus-edecd",
+    "appId": "1:417649530257:web:e5436a49ae99e460513630"
   },
   "moderateurs": [
     "musiqueweplus@gmail.com",
