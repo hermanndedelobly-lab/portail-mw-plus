@@ -354,7 +354,8 @@
           if (!T.length) { out.innerHTML = '<div class="empty"><strong>Les premiers titres arrivent bientôt</strong>Artiste wê ? <a href="#contact--proposer">Proposez votre musique</a>.</div>'; return; }
           out.innerHTML = r.length ? r.map(function (x) {
             var src = x.audio || x.audioUrl, yt = idYoutube(x.youtube);
-            return '<article class="titre">' + (x.image ? '<img src="' + esc(x.image) + '" alt="" loading="lazy">' : '<span class="titre__note" aria-hidden="true">♪</span>') +
+            var pochette = x.image || (yt ? "https://i.ytimg.com/vi/" + yt + "/hqdefault.jpg" : "");
+            return '<article class="titre">' + (pochette ? '<img src="' + esc(pochette) + '" alt="" loading="lazy">' : '<span class="titre__note" aria-hidden="true">♪</span>') +
               '<div class="titre__corps"><h3>' + esc(x.titre) + "</h3><p>" + esc([x.artiste, x.album, x.annee, x.genre].filter(Boolean).join(" · ")) + "</p>" +
               (src ? '<audio controls preload="none" src="' + esc(src) + '"></audio>' :
                 yt ? '<button type="button" class="yt" data-yt="' + yt + '" aria-label="Écouter ' + esc(x.titre) + '"><img src="https://i.ytimg.com/vi/' + yt + '/hqdefault.jpg" alt="" loading="lazy"><span class="yt__play">▶ Écouter</span></button>' : "") +
