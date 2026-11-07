@@ -1,9 +1,136 @@
 {
   "nom": "Bangolo",
   "region": "Guémon",
-  "statut": "a-venir",
-  "presentation": "",
-  "sourcesQuartiers": [],
-  "quartiers": [],
-  "acteurs": []
+  "statut": "en-cours",
+  "presentation": "Chef-lieu du département de Bangolo, dans la région du Guémon, entre Duékoué et Man. Le village de Banglô, installé sur le site actuel en 1921, est devenu sous-préfecture en 1961. Peu d'informations sont publiées en ligne sur ses quartiers et ses activités : c'est la ville où vos contributions compteront le plus.",
+  "sourcesQuartiers": [
+    {
+      "titre": "Le Patriote, pavage des quartiers de Bangolo",
+      "url": "https://lepatriote.ci/bangolo-le-maire-gah-roger-lance-le-pavage-de-plusieurs-quartiers-pour-ameliorer-la-mobilite"
+    },
+    {
+      "titre": "Wê Radio, histoire de Banglô",
+      "url": "http://www.weradio.info/1165--l-histoire-du-village-de-banglo-desormais-ville-de-bangolo--.html"
+    }
+  ],
+  "quartiers": [
+    {
+      "nom": "Wongbaé",
+      "description": "Présenté comme le premier quartier de Bangolo."
+    },
+    {
+      "nom": "Le Plateau",
+      "description": "Relie plusieurs secteurs de la ville."
+    }
+  ],
+  "acteurs": [
+    {
+      "nom": "Hôpital général de Bangolo",
+      "secteur": "Santé",
+      "activite": "Hôpital public : maternité, pédiatrie, laboratoire, pharmacie",
+      "quartier": "",
+      "adresse": "Près de la Trésorerie et de la Sous-préfecture",
+      "telephone": "",
+      "description": "En réhabilitation depuis mai 2024 (AIP).",
+      "source": "Medivoire",
+      "sourceUrl": "https://www.medivoire.com/en/hospital/hopital-general-de-bangolo-b4fd1d2c",
+      "verifie": false
+    },
+    {
+      "nom": "Centre de santé rural de Dah-Kahen",
+      "secteur": "Santé",
+      "activite": "Centre de santé rural",
+      "quartier": "",
+      "adresse": "Village de Dah-Kahen (sous-préfecture de Bangolo)",
+      "telephone": "",
+      "description": "",
+      "source": "Infos d'Ivoire (2022)",
+      "sourceUrl": "https://infosdivoire.net/news/post/action-sociale-bangolo-lhopital-general-et-un-centre-de-sante-recoivent-du-materiel-medical",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie de Bangolo",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "BP 225 Bangolo",
+      "telephone": "",
+      "description": "",
+      "source": "Liste des prestataires AMAT, Trésor public (juin 2025)",
+      "sourceUrl": "https://amatci.tresor.gouv.ci/wp-content/uploads/2025/10/LISTE_PRESTATAIRES_30_06_2025.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie Sainte Famille de Nazareth",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "BP 80 Bangolo",
+      "telephone": "",
+      "description": "",
+      "source": "Liste des prestataires AMAT, Trésor public (juin 2025)",
+      "sourceUrl": "https://amatci.tresor.gouv.ci/wp-content/uploads/2025/10/LISTE_PRESTATAIRES_30_06_2025.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Lycée moderne de Bangolo",
+      "secteur": "Éducation",
+      "activite": "Lycée public mixte",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Réhabilitation de quatre bâtiments lancée en septembre 2025.",
+      "source": "AIP (février 2026)",
+      "sourceUrl": "https://www.aip.ci/315209/cote-divoire-aip-le-lycee-moderne-de-bangolo-instaure-une-culture-de-merite-et-de-performance/",
+      "verifie": false
+    },
+    {
+      "nom": "Collège privé Boyanaho",
+      "secteur": "Éducation",
+      "activite": "Établissement secondaire privé",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "AIP (mars 2026)",
+      "sourceUrl": "https://www.aip.ci/328604/cote-divoire-aip-des-etablissements-secondaires-de-bangolo-menent-des-actions-de-sensibilisation-a-lhygiene-en-milieu-scolaire/",
+      "verifie": false
+    },
+    {
+      "nom": "Mairie de Bangolo",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de Bangolo)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Le Patriote",
+      "sourceUrl": "https://lepatriote.ci/bangolo-le-maire-gah-roger-lance-le-pavage-de-plusieurs-quartiers-pour-ameliorer-la-mobilite",
+      "verifie": false
+    },
+    {
+      "nom": "Sous-préfecture de Bangolo",
+      "secteur": "Administration & services publics",
+      "activite": "Sous-préfecture",
+      "quartier": "",
+      "adresse": "Près de l'Hôpital général",
+      "telephone": "",
+      "description": "",
+      "source": "Medivoire",
+      "sourceUrl": "https://www.medivoire.com/en/hospital/hopital-general-de-bangolo-b4fd1d2c",
+      "verifie": false
+    },
+    {
+      "nom": "Trésorerie de Bangolo",
+      "secteur": "Administration & services publics",
+      "activite": "Trésor public",
+      "quartier": "",
+      "adresse": "Près de l'Hôpital général",
+      "telephone": "",
+      "description": "",
+      "source": "Medivoire",
+      "sourceUrl": "https://www.medivoire.com/en/hospital/hopital-general-de-bangolo-b4fd1d2c",
+      "verifie": false
+    }
+  ]
 }
