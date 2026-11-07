@@ -1,9 +1,46 @@
 {
   "nom": "Facobly",
   "region": "Guémon",
-  "statut": "a-venir",
-  "presentation": "",
+  "statut": "en-cours",
+  "presentation": "Chef-lieu du département de Facobly, dans la région du Guémon. La commune regroupe 17 villages. Les quartiers de la ville et ses activités sont encore à recenser : chaque inscription compte.",
   "sourcesQuartiers": [],
   "quartiers": [],
-  "acteurs": []
+  "acteurs": [
+    {
+      "nom": "Mairie de Facobly",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de 17 villages)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Afrikmag",
+      "sourceUrl": "https://www.afrikmag.com/creances-vol-de-fer-evariste-meambly-adresse-un-ultimatum-a-moise-gnamke-maire-de-facobly/",
+      "verifie": false
+    },
+    {
+      "nom": "Centre de santé urbain de Totrodrou",
+      "secteur": "Santé",
+      "activite": "Centre de santé",
+      "quartier": "",
+      "adresse": "Totrodrou, à environ 11 km au sud de Facobly",
+      "telephone": "",
+      "description": "",
+      "source": "Mapcarta (données OpenStreetMap)",
+      "sourceUrl": "https://mapcarta.com/16924258",
+      "verifie": false
+    },
+    {
+      "nom": "Centre de santé rural de Trokpadrou",
+      "secteur": "Santé",
+      "activite": "Centre de santé rural",
+      "quartier": "",
+      "adresse": "Trokpadrou, à environ 13 km au sud-ouest de Facobly",
+      "telephone": "",
+      "description": "",
+      "source": "Mapcarta (données OpenStreetMap)",
+      "sourceUrl": "https://mapcarta.com/16924258",
+      "verifie": false
+    }
+  ]
 }

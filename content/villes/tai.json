@@ -1,9 +1,82 @@
 {
   "nom": "Taï",
   "region": "Cavally",
-  "statut": "a-venir",
-  "presentation": "",
+  "statut": "en-cours",
+  "presentation": "Chef-lieu de département de la région du Cavally, à 85 km de Guiglo, entre le parc national de Taï et le fleuve Cavally, à la frontière du Liberia. Porte d'entrée de la dernière grande forêt primaire d'Afrique de l'Ouest, inscrite au patrimoine mondial de l'UNESCO en 1981.",
   "sourcesQuartiers": [],
   "quartiers": [],
-  "acteurs": []
+  "acteurs": [
+    {
+      "nom": "Parc national de Taï",
+      "secteur": "Culture & loisirs",
+      "activite": "Parc national, patrimoine mondial de l'UNESCO (1981), réserve de biosphère (1978)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Wikipédia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ta%C3%AF_National_Park",
+      "verifie": false
+    },
+    {
+      "nom": "Campement écotouristique du parc (Wild Chimpanzee Foundation)",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Campement en forêt",
+      "quartier": "",
+      "adresse": "À 10 km de l'entrée de la forêt",
+      "telephone": "",
+      "description": "",
+      "source": "Wikivoyage",
+      "sourceUrl": "https://fr.wikivoyage.org/wiki/Ta%C3%AF",
+      "verifie": false
+    },
+    {
+      "nom": "Auberge Beau Séjour",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Auberge",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Une des trois possibilités d'hébergement de la commune selon Wikivoyage.",
+      "source": "Wikivoyage",
+      "sourceUrl": "https://fr.wikivoyage.org/wiki/Ta%C3%AF",
+      "verifie": false
+    },
+    {
+      "nom": "Centre de santé urbain de Taï",
+      "secteur": "Santé",
+      "activite": "Centre de santé urbain",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Rezo-Ivoire, la ville de Taï",
+      "sourceUrl": "https://rezoivoire.net/ivoire/villes-villages/1962/la-ville-de-tai.html",
+      "verifie": false
+    },
+    {
+      "nom": "Lycée municipal de Taï",
+      "secteur": "Éducation",
+      "activite": "Lycée",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Rezo-Ivoire, la ville de Taï",
+      "sourceUrl": "https://rezoivoire.net/ivoire/villes-villages/1962/la-ville-de-tai.html",
+      "verifie": false
+    },
+    {
+      "nom": "Mairie de Taï",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de Taï)",
+      "quartier": "",
+      "adresse": "BP 175 Taï",
+      "telephone": "",
+      "description": "",
+      "source": "UVICOCI",
+      "sourceUrl": "http://uvicoci.ci/accueil/communedetail/81",
+      "verifie": false
+    }
+  ]
 }

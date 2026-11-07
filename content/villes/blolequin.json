@@ -1,9 +1,82 @@
 {
   "nom": "Blolequin",
   "region": "Cavally",
-  "statut": "a-venir",
-  "presentation": "",
+  "statut": "en-cours",
+  "presentation": "Chef-lieu de département de la région du Cavally, entre Guiglo et Toulépleu. Le département compte quatre cantons : Zranbanhou, Gboho, Néaho-Nord et Néaho-Sud. Les quartiers de la ville ne sont pas encore recensés : aidez-nous à les nommer.",
   "sourcesQuartiers": [],
   "quartiers": [],
-  "acteurs": []
+  "acteurs": [
+    {
+      "nom": "Hôpital général de Blolequin",
+      "secteur": "Santé",
+      "activite": "Hôpital public",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "En avril 2024, le maire a demandé le financement d'un bloc opératoire (Lia.ci).",
+      "source": "Guide du réseau de soins, Ordre des avocats (2025)",
+      "sourceUrl": "https://web.ordredesavocats.ci/wp-content/uploads/2025/03/GUIDE-DE-LASSURE-RESEAU-DE-SOIN.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Nouvelle Pharmacie Bloléquin",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Guide du réseau de soins, Ordre des avocats (2025)",
+      "sourceUrl": "https://web.ordredesavocats.ci/wp-content/uploads/2025/03/GUIDE-DE-LASSURE-RESEAU-DE-SOIN.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie du Lycée",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Guide du réseau de soins, Ordre des avocats (2025)",
+      "sourceUrl": "https://web.ordredesavocats.ci/wp-content/uploads/2025/03/GUIDE-DE-LASSURE-RESEAU-DE-SOIN.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Lycée municipal de Blolequin",
+      "secteur": "Éducation",
+      "activite": "Lycée",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Rezo-Ivoire",
+      "sourceUrl": "https://www.rezoivoire.net/ivoire/villes-villages/1781/blolequin.html",
+      "verifie": false
+    },
+    {
+      "nom": "Mairie de Blolequin",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de Blolequin)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Priorités annoncées : éducation et santé.",
+      "source": "AIP (mai 2024)",
+      "sourceUrl": "https://www.aip.ci/cote-divoire-aip-le-maire-de-blolequin-evoque-ses-actions-de-developpement-en-sept-mois-de-mandature/",
+      "verifie": false
+    },
+    {
+      "nom": "Place de la Cohésion",
+      "secteur": "Culture & loisirs",
+      "activite": "Place publique, lieu des journées culturelles intercommunales",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Lia.ci (avril 2024)",
+      "sourceUrl": "https://news.lia.ci/news/politique/blolequin-ce-que-le-maire-pdci-ouahi-a-demande-a-anne-ouloto/",
+      "verifie": false
+    }
+  ]
 }

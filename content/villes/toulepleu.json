@@ -1,9 +1,104 @@
 {
   "nom": "Toulépleu",
   "region": "Cavally",
-  "statut": "a-venir",
-  "presentation": "",
-  "sourcesQuartiers": [],
-  "quartiers": [],
-  "acteurs": []
+  "statut": "en-cours",
+  "presentation": "Chef-lieu de département de la région du Cavally, près de la frontière libérienne. La mairie a lancé en 2026 un programme de 26 projets, dont la réfection de 10 km de voirie dans plusieurs quartiers.",
+  "sourcesQuartiers": [
+    {
+      "titre": "Infocentrale (mars 2026)",
+      "url": "https://infocentrale.net/2026/03/03/region-du-cavally-focus-sur-les-26-projets-majeurs-du-maire-kah-zion-pour-embellir-la-ville-de-toulepleu/"
+    },
+    {
+      "titre": "Réseau de soins des Douanes (2019)",
+      "url": "https://www.douanes.ci/sites/default/files/mutuelle_des_agents/reseau_de_soins_a_la_date_du_18-07-2019_0.pdf"
+    }
+  ],
+  "quartiers": [
+    {
+      "nom": "Beausoleil",
+      "description": ""
+    },
+    {
+      "nom": "Kan-Racine",
+      "description": ""
+    },
+    {
+      "nom": "Libreville",
+      "description": ""
+    },
+    {
+      "nom": "Château",
+      "description": ""
+    },
+    {
+      "nom": "Sokourani",
+      "description": ""
+    },
+    {
+      "nom": "Énergie",
+      "description": ""
+    }
+  ],
+  "acteurs": [
+    {
+      "nom": "Pharmacie El Shaddai",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "Énergie",
+      "adresse": "Quartier Énergie, derrière la gendarmerie nationale",
+      "telephone": "",
+      "description": "",
+      "source": "Réseau de soins des Douanes (2019)",
+      "sourceUrl": "https://www.douanes.ci/sites/default/files/mutuelle_des_agents/reseau_de_soins_a_la_date_du_18-07-2019_0.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Hôpital général de Toulépleu",
+      "secteur": "Santé",
+      "activite": "Hôpital public",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Le département comptait aussi cinq dispensaires et deux maternités en 2012.",
+      "source": "Connectionivoirienne (2012)",
+      "sourceUrl": "https://connectionivoirienne.net/2012/04/18/cote-divoire-les-difficultes-de-toulepleu/",
+      "verifie": false
+    },
+    {
+      "nom": "Lycée moderne de Toulépleu",
+      "secteur": "Éducation",
+      "activite": "Lycée public",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Connectionivoirienne (2012)",
+      "sourceUrl": "https://connectionivoirienne.net/2012/04/18/cote-divoire-les-difficultes-de-toulepleu/",
+      "verifie": false
+    },
+    {
+      "nom": "Mairie de Toulépleu",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de Toulépleu)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Bâtiment en réhabilitation (2026).",
+      "source": "Infocentrale (mars 2026)",
+      "sourceUrl": "https://infocentrale.net/2026/03/03/region-du-cavally-focus-sur-les-26-projets-majeurs-du-maire-kah-zion-pour-embellir-la-ville-de-toulepleu/",
+      "verifie": false
+    },
+    {
+      "nom": "Gendarmerie nationale de Toulépleu",
+      "secteur": "Administration & services publics",
+      "activite": "Gendarmerie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Citée comme repère par une pharmacie du quartier Énergie.",
+      "source": "Réseau de soins des Douanes (2019)",
+      "sourceUrl": "https://www.douanes.ci/sites/default/files/mutuelle_des_agents/reseau_de_soins_a_la_date_du_18-07-2019_0.pdf",
+      "verifie": false
+    }
+  ]
 }

@@ -1,9 +1,58 @@
 {
   "nom": "Kouibly",
   "region": "Guémon",
-  "statut": "a-venir",
-  "presentation": "",
+  "statut": "en-cours",
+  "presentation": "Chef-lieu du département de Kouibly, dans la région du Guémon : commune et sous-préfecture de 17 villages. Les quartiers de la ville sont encore à recenser.",
   "sourcesQuartiers": [],
   "quartiers": [],
-  "acteurs": []
+  "acteurs": [
+    {
+      "nom": "Hôpital général de Kouibly",
+      "secteur": "Santé",
+      "activite": "Hôpital public",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Mapcarta (données OpenStreetMap)",
+      "sourceUrl": "https://mapcarta.com/fr/W785885126",
+      "verifie": false
+    },
+    {
+      "nom": "Collège moderne de Kouibly",
+      "secteur": "Éducation",
+      "activite": "Collège public",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Ministère de l'Éducation nationale (2021-2022)",
+      "sourceUrl": "https://www.education.gouv.ci/assets/pdf/Reseau/Etablissement/fichier_12.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Sous-préfecture de Kouibly",
+      "secteur": "Administration & services publics",
+      "activite": "Sous-préfecture",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Wikipédia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kouibly",
+      "verifie": false
+    },
+    {
+      "nom": "Mairie de Kouibly",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de Kouibly)",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Wikipédia",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Kouibly",
+      "verifie": false
+    }
+  ]
 }
