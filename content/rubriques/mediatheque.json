@@ -1,0 +1,53 @@
+{
+  "label": "Médiathèque",
+  "court": "Médiathèque",
+  "intro": "Livres, documents, photos, vidéos et archives à consulter et télécharger.",
+  "image": "assets/photos/visages-peints.webp",
+  "pages": [
+    {
+      "id": "telechargements",
+      "titre": "Téléchargements",
+      "type": "texte",
+      "chapo": "Tous les fichiers mis à disposition par le portail.",
+      "texte": "Leçons de wê, fiches culturelles, affiches d'événements, sonneries et fonds d'écran.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "livres",
+      "titre": "Livres et documents PDF",
+      "type": "texte",
+      "chapo": "Ouvrages, mémoires, thèses et articles sur le peuple wê.",
+      "texte": "Chaque document sera publié avec l'accord de son auteur ou s'il est libre de droits.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "photos",
+      "titre": "Photos",
+      "type": "texte",
+      "chapo": "Galeries : villages, cérémonies, portraits, paysages.",
+      "texte": "Envoyez vos photos en précisant le lieu, la date et l'auteur.",
+      "image": "assets/photos/visages-peints.webp",
+      "aCompleter": true
+    },
+    {
+      "id": "videos",
+      "titre": "Vidéos",
+      "type": "texte",
+      "chapo": "Documentaires, reportages, cérémonies filmées.",
+      "texte": "Les vidéos seront classées par thème et par village.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "archives",
+      "titre": "Archives historiques",
+      "type": "texte",
+      "chapo": "Documents anciens, photographies d'époque et enregistrements rares.",
+      "texte": "Vous détenez des archives familiales ? Le portail peut les numériser et les préserver avec votre accord.",
+      "image": "",
+      "aCompleter": true
+    }
+  ]
+}

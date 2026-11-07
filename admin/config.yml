@@ -1,0 +1,964 @@
+# Configuration de l'espace administrateur (Decap CMS).
+# Si le dépôt GitHub porte un autre nom, modifiez « repo » ci-dessous.
+# Pour tester sur un ordinateur : lancer « npx decap-server » à la racine du site, puis ouvrir /admin/
+backend:
+  name: github
+  repo: hermanndedelobly-lab/portail-mw-plus
+  branch: main
+  commit_messages:
+    create: 'Ajout : {{collection}} « {{slug}} »'
+    update: 'Mise à jour : {{collection}} « {{slug}} »'
+    delete: 'Suppression : {{collection}} « {{slug}} »'
+    uploadMedia: Ajout du fichier {{path}}
+    deleteMedia: Suppression du fichier {{path}}
+local_backend: true
+locale: fr
+site_url: /
+display_url: /
+logo_url: ../assets/logo-192.png
+media_folder: assets/uploads
+public_folder: assets/uploads
+collections:
+- name: une
+  label: À la une (carrousel)
+  files:
+  - label: Diapositives de l'accueil
+    name: diapositives
+    file: content/une.json
+    fields:
+    - label: Diapositives
+      label_singular: diapositive
+      name: diapositives
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Image
+        name: image
+        widget: image
+      - label: Étiquette
+        name: etiquette
+        widget: string
+        hint: 'Ex. : Traditions, Danses, Événement'
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Texte
+        name: texte
+        widget: text
+      - label: 'Lien (page du site, ex. #culture--danses)'
+        name: lien
+        widget: string
+        required: false
+      - label: Crédit photo
+        name: credit
+        widget: string
+        required: false
+- name: actualites
+  label: Actualités
+  files:
+  - label: Actualités
+    name: liste
+    file: content/actualites.json
+    fields:
+    - label: Articles
+      label_singular: article
+      name: articles
+      widget: list
+      add_to_top: true
+      summary: '{{fields.date}} · {{fields.titre}}'
+      fields:
+      - label: Date
+        name: date
+        widget: datetime
+        format: YYYY-MM-DD
+        date_format: DD/MM/YYYY
+        time_format: false
+        picker_utc: true
+      - label: Catégorie
+        name: categorie
+        widget: select
+        options:
+        - Culture
+        - Communauté
+        - Événement
+        - Annonce
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Résumé
+        name: resume
+        widget: text
+      - label: Lieu
+        name: lieu
+        widget: string
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: 'Lien (facultatif, ex. #culture--danses ou https://…)'
+        name: lien
+        widget: string
+        required: false
+- name: dictionnaire
+  label: Dictionnaire
+  files:
+  - label: Dictionnaire français-wê
+    name: mots
+    file: content/dictionnaire.json
+    fields:
+    - label: Mots
+      label_singular: mot
+      name: entrees
+      widget: list
+      summary: '{{fields.fr}} → {{fields.we}}'
+      fields:
+      - label: Français
+        name: fr
+        widget: string
+      - label: Wê
+        name: we
+        widget: string
+      - label: Catégorie
+        name: categorie
+        widget: string
+        required: false
+        hint: 'Ex. : Salutations, Famille, Nombres, Nature'
+      - label: Variante (guéré, wobé, canton…)
+        name: variante
+        widget: string
+        required: false
+      - label: Exemple
+        name: exemple
+        widget: text
+        required: false
+- name: annuaire
+  label: Annuaire Wê Business
+  files:
+  - label: Entreprises et professionnels
+    name: entreprises
+    file: content/annuaire.json
+    fields:
+    - label: Fiches
+      label_singular: fiche
+      name: entreprises
+      widget: list
+      summary: '{{fields.nom}} · {{fields.ville}}'
+      fields:
+      - label: Nom
+        name: nom
+        widget: string
+      - label: Catégorie
+        name: categorie
+        widget: select
+        options:
+        - Commerce
+        - Entrepreneur
+        - Artisan
+        - Service
+      - label: Activité
+        name: activite
+        widget: string
+      - label: Ville
+        name: ville
+        widget: string
+      - label: Téléphone
+        name: telephone
+        widget: string
+        required: false
+      - label: Description
+        name: description
+        widget: text
+        required: false
+- name: rubriques
+  label: Rubriques et pages
+  files:
+  - label: Histoire & Civilisation
+    name: histoire
+    file: content/rubriques/histoire.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Langue wê
+    name: langue
+    file: content/rubriques/langue.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Culture & Traditions
+    name: culture
+    file: content/rubriques/culture.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Musique & Artistes
+    name: musique
+    file: content/rubriques/musique.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Tourisme & Découverte
+    name: tourisme
+    file: content/rubriques/tourisme.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Médiathèque
+    name: mediatheque
+    file: content/rubriques/mediatheque.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Actualités (textes des pages)
+    name: actualites
+    file: content/rubriques/actualites.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Wê Business
+    name: business
+    file: content/rubriques/business.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+  - label: Contact
+    name: contact
+    file: content/rubriques/contact.json
+    fields:
+    - label: Nom de la rubrique
+      name: label
+      widget: string
+    - label: Nom court (menu)
+      name: court
+      widget: string
+    - label: Présentation
+      name: intro
+      widget: text
+    - label: Image de la rubrique
+      name: image
+      widget: image
+      required: false
+    - label: Pages
+      label_singular: page
+      name: pages
+      widget: list
+      summary: '{{fields.titre}}'
+      fields:
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Identifiant dans l'adresse (minuscules, sans espace ni accent)
+        name: id
+        widget: string
+        pattern:
+        - ^[a-z0-9]+(-[a-z0-9]+)*$
+        - Minuscules, chiffres et tirets uniquement
+      - label: Type de page
+        name: type
+        widget: select
+        default: texte
+        options:
+        - label: Texte
+          value: texte
+        - label: Dictionnaire
+          value: dictionnaire
+        - label: Liste d'actualités
+          value: actualites
+        - label: Annuaire
+          value: annuaire
+        - label: Formulaire
+          value: formulaire
+      - label: Chapeau (phrase d'introduction)
+        name: chapo
+        widget: text
+        required: false
+      - label: Image
+        name: image
+        widget: image
+        required: false
+      - label: Texte (laissez une ligne vide entre deux paragraphes)
+        name: texte
+        widget: text
+        required: false
+      - label: Afficher « Rubrique en construction »
+        name: aCompleter
+        widget: boolean
+        default: false
+        required: false
+      - label: Filtre (catégorie d'actualité ou d'annuaire à afficher)
+        name: filtre
+        widget: string
+        required: false
+        hint: 'Actualités : Culture, Communauté, Événement, Annonce. Annuaire : Commerce, Entrepreneur, Artisan, Service.'
+      - label: Formulaire à afficher
+        name: formulaire
+        widget: select
+        required: false
+        options:
+        - label: Nous contacter
+          value: contact
+        - label: Devenir partenaire
+          value: partenaire
+        - label: Proposer un contenu
+          value: contenu
+- name: reglages
+  label: Réglages du site
+  files:
+  - label: Réglages généraux
+    name: site
+    file: content/site.json
+    fields:
+    - label: Nom du site
+      name: nom
+      widget: string
+    - label: Devise
+      name: slogan
+      widget: string
+    - label: E-mail affiché en cas d'échec d'envoi
+      name: emailContact
+      widget: string
+    - label: Téléphone
+      name: telephone
+      widget: string
+      required: false
+    - label: WhatsApp (avec indicatif, ex. +225 07 00 00 00 00)
+      name: whatsapp
+      widget: string
+      required: false
+    - label: Page d'accueil
+      name: accueil
+      widget: object
+      fields:
+      - label: Étiquette
+        name: etiquette
+        widget: string
+      - label: Titre
+        name: titre
+        widget: string
+      - label: Fin du titre (en vert)
+        name: titreAccent
+        widget: string
+        required: false
+      - label: Texte d'accueil
+        name: texte
+        widget: text
+      - label: Villes affichées sous le carrousel
+        label_singular: ville
+        name: villes
+        widget: list
+        field:
+          label: Ville
+          name: ville
+          widget: string
+    - label: Réseaux sociaux (adresses complètes)
+      name: reseaux
+      widget: object
+      fields:
+      - label: Facebook
+        name: facebook
+        widget: string
+        required: false
+      - label: Instagram
+        name: instagram
+        widget: string
+        required: false
+      - label: YouTube
+        name: youtube
+        widget: string
+        required: false
+      - label: Tiktok
+        name: tiktok
+        widget: string
+        required: false

@@ -1,0 +1,53 @@
+{
+  "label": "Musique & Artistes",
+  "court": "Musique",
+  "intro": "Les voix d'hier et d'aujourd'hui : artistes, sorties, clips et entretiens.",
+  "image": "assets/photos/danse-acrobatique.webp",
+  "pages": [
+    {
+      "id": "artistes",
+      "titre": "Artistes wê",
+      "type": "texte",
+      "chapo": "Portraits des chanteurs, musiciens, groupes et danseurs du pays wê et de la diaspora.",
+      "texte": "Chaque portrait présentera le parcours de l'artiste, sa discographie et ses liens officiels.\n\nArtiste ou manager ? Envoyez votre biographie et vos photos depuis « Proposer un contenu ».",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "nouveautes",
+      "titre": "Nouveautés musicales",
+      "type": "texte",
+      "chapo": "Les dernières sorties des artistes wê.",
+      "texte": "Les nouveautés seront publiées chaque semaine, avec un extrait et les liens d'écoute.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "albums",
+      "titre": "Albums et singles",
+      "type": "texte",
+      "chapo": "La discographie des artistes wê, classée par artiste et par année.",
+      "texte": "Titre, année, label, liste des morceaux et liens vers les plateformes d'écoute.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "clips",
+      "titre": "Clips vidéo",
+      "type": "texte",
+      "chapo": "Les clips des artistes wê, à regarder directement sur le portail.",
+      "texte": "Les clips seront intégrés depuis les chaînes officielles des artistes.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "interviews",
+      "titre": "Interviews",
+      "type": "texte",
+      "chapo": "Les artistes racontent leur parcours, leurs inspirations et leur attachement à la culture wê.",
+      "texte": "Entretiens écrits, audio et vidéo.",
+      "image": "",
+      "aCompleter": true
+    }
+  ]
+}

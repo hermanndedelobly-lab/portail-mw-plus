@@ -1,0 +1,53 @@
+{
+  "label": "Histoire & Civilisation",
+  "court": "Histoire",
+  "intro": "D'où vient le peuple wê, comment il s'est organisé et ce qu'il a transmis de génération en génération.",
+  "image": "assets/photos/hommes-panthere.webp",
+  "pages": [
+    {
+      "id": "origines",
+      "titre": "Origines du peuple wê",
+      "type": "texte",
+      "chapo": "Les Wê vivent dans l'ouest de la Côte d'Ivoire, entre forêts, collines et rivières, dans les régions du Guémon et du Cavally.",
+      "texte": "Le peuple wê appartient au grand ensemble des peuples de langues krou, présents dans l'ouest et le sud-ouest de la Côte d'Ivoire ainsi qu'au Liberia voisin. On distingue habituellement deux grandes composantes : les Guéré et les Wobé, qui partagent une même langue, le wê, et un même fonds de croyances et de coutumes.\n\nLe pays wê s'étend autour de villes comme Duékoué, Guiglo, Bangolo, Blolequin, Toulépleu, Facobly et Kouibly. Chaque village se rattache à un lignage et à un ancêtre fondateur dont on raconte l'histoire lors des veillées.\n\nCette rubrique rassemblera les récits d'origine propres à chaque canton et à chaque village, tels que les transmettent les anciens.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "patrimoine",
+      "titre": "Histoire et patrimoine",
+      "type": "texte",
+      "chapo": "Les grandes étapes de l'histoire du pays wê et les biens matériels et immatériels qui en témoignent.",
+      "texte": "Organisation lignagère, alliances entre villages, rencontres avec les peuples voisins, période coloniale puis Côte d'Ivoire indépendante : l'histoire wê se lit dans les récits, les chants et les objets.\n\nLe patrimoine wê comprend notamment les masques, la statuaire, les cases et sites sacrés, les forêts protégées par la tradition et un très riche patrimoine oral.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "personnalites",
+      "titre": "Personnalités historiques",
+      "type": "texte",
+      "chapo": "Chefs, résistants, savants, artistes et bâtisseurs qui ont marqué l'histoire du peuple wê.",
+      "texte": "Chaque fiche présentera la vie de la personnalité, son village d'origine, son rôle et les sources qui la documentent.\n\nVous connaissez une figure qui mérite d'y figurer ? Proposez sa biographie depuis la page « Proposer un contenu ».",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "traditions",
+      "titre": "Traditions ancestrales",
+      "type": "texte",
+      "chapo": "Croyances, rites de passage, règles de vie et savoirs transmis par les anciens.",
+      "texte": "Chez les Wê, le masque occupe une place centrale : il n'est pas un simple objet mais une puissance qui intervient dans la vie de la communauté, pour divertir, enseigner, juger ou apaiser les conflits.\n\nRites de naissance, d'initiation, de mariage et de funérailles, respect des aînés, solidarité du lignage : cette rubrique décrira ces traditions avec l'accord et l'aide des gardiens de la coutume.",
+      "image": "assets/photos/hommes-panthere.webp",
+      "aCompleter": true
+    },
+    {
+      "id": "chefferies",
+      "titre": "Chefferies traditionnelles",
+      "type": "texte",
+      "chapo": "L'organisation du pouvoir traditionnel : chefs de village, chefs de canton, notables et conseils des anciens.",
+      "texte": "Le village est dirigé par un chef entouré de notables et des représentants des lignages. Les questions importantes sont débattues en assemblée, sous l'arbre à palabres.\n\nUn annuaire des chefferies, canton par canton, viendra compléter cette page.",
+      "image": "",
+      "aCompleter": true
+    }
+  ]
+}

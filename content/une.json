@@ -1,0 +1,44 @@
+{
+  "diapositives": [
+    {
+      "image": "assets/photos/hommes-panthere.webp",
+      "etiquette": "Traditions",
+      "titre": "La société des hommes Panthère",
+      "texte": "Masques, costumes de raphia et danses : une des sociétés qui font vivre les traditions du pays wê.",
+      "lien": "#histoire--traditions",
+      "credit": "Photo : Vnews.ci"
+    },
+    {
+      "image": "assets/photos/danse-village.webp",
+      "etiquette": "Danses",
+      "titre": "Danses traditionnelles du pays wê",
+      "texte": "Pas, tambours et chants : chaque danse a son occasion, son sens et ses gardiens.",
+      "lien": "#culture--danses",
+      "credit": ""
+    },
+    {
+      "image": "assets/photos/ceremonie-raphia.webp",
+      "etiquette": "Cérémonies",
+      "titre": "Corps peints et jupes de raphia",
+      "texte": "Les cérémonies rassemblent tout le village autour des danseuses et des chants.",
+      "lien": "#culture--ceremonies",
+      "credit": ""
+    },
+    {
+      "image": "assets/photos/coiffe-cauris.webp",
+      "etiquette": "Habillement",
+      "titre": "Coiffes de cauris et visages peints",
+      "texte": "Cauris, clochettes et calebasses : des parures qui racontent le rang et l’occasion.",
+      "lien": "#culture--habillement",
+      "credit": ""
+    },
+    {
+      "image": "assets/photos/danse-acrobatique.webp",
+      "etiquette": "Contribuer",
+      "titre": "Partagez vos photos et vos récits",
+      "texte": "Fêtes, cérémonies, portraits d’anciens : envoyez vos images pour enrichir la mémoire wê.",
+      "lien": "#contact--proposer",
+      "credit": ""
+    }
+  ]
+}

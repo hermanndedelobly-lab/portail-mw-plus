@@ -1,0 +1,48 @@
+{
+  "label": "Actualités",
+  "court": "Actualités",
+  "intro": "Ce qui se passe dans le pays wê et dans la diaspora.",
+  "image": "",
+  "pages": [
+    {
+      "id": "culturelles",
+      "titre": "Actualités culturelles",
+      "type": "actualites",
+      "chapo": "Festivals, sorties d'albums, expositions, publications.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "filtre": "Culture"
+    },
+    {
+      "id": "communautaires",
+      "titre": "Actualités communautaires",
+      "type": "actualites",
+      "chapo": "La vie des villages, des associations et de la diaspora.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "filtre": "Communauté"
+    },
+    {
+      "id": "evenements",
+      "titre": "Événements",
+      "type": "actualites",
+      "chapo": "L'agenda des fêtes, cérémonies, concerts et rencontres.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "filtre": "Événement"
+    },
+    {
+      "id": "annonces",
+      "titre": "Annonces",
+      "type": "actualites",
+      "chapo": "Avis, communiqués, décès, mariages, recherches.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "filtre": "Annonce"
+    }
+  ]
+}

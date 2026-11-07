@@ -1,0 +1,56 @@
+{
+  "label": "Wê Business",
+  "court": "Wê Business",
+  "intro": "L'économie du pays wê : entreprises, commerces, entrepreneurs et artisans.",
+  "image": "",
+  "pages": [
+    {
+      "id": "annuaire",
+      "titre": "Annuaire des entreprises",
+      "type": "annuaire",
+      "chapo": "Trouvez une entreprise ou un professionnel wê.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false
+    },
+    {
+      "id": "commerces",
+      "titre": "Commerces et services",
+      "type": "annuaire",
+      "chapo": "Boutiques, restaurants, transport, services.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "filtre": "Commerce"
+    },
+    {
+      "id": "entrepreneurs",
+      "titre": "Entrepreneurs",
+      "type": "annuaire",
+      "chapo": "Celles et ceux qui créent et développent des activités.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "filtre": "Entrepreneur"
+    },
+    {
+      "id": "artisans",
+      "titre": "Artisans",
+      "type": "annuaire",
+      "chapo": "Sculpteurs, tisserands, forgerons, potiers, couturiers.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "filtre": "Artisan"
+    },
+    {
+      "id": "publicites",
+      "titre": "Publicités et partenariats",
+      "type": "texte",
+      "chapo": "Faites connaître votre activité auprès de la communauté wê.",
+      "texte": "Bannières, articles sponsorisés, partenariats d'événements : le portail propose plusieurs formules pour soutenir son fonctionnement tout en valorisant les entreprises de la communauté.\n\nContactez-nous depuis la page « Devenir partenaire ».",
+      "image": "",
+      "aCompleter": false
+    }
+  ]
+}

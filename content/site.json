@@ -1,0 +1,29 @@
+{
+  "nom": "MW+",
+  "slogan": "La Culture Wê, notre fierté",
+  "emailContact": "contact@mondewe.ci",
+  "accueil": {
+    "etiquette": "Culture wê",
+    "titre": "La culture qui unit",
+    "titreAccent": "le peuple Wê",
+    "texte": "Histoire, langue, traditions, musique et villages du pays wê, dans l’ouest de la Côte d’Ivoire. Une information fiable, locale et transmise par la communauté.",
+    "villes": [
+      "Duékoué",
+      "Guiglo",
+      "Bangolo",
+      "Blolequin",
+      "Toulépleu",
+      "Facobly",
+      "Kouibly",
+      "Taï"
+    ]
+  },
+  "telephone": "",
+  "whatsapp": "",
+  "reseaux": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "tiktok": ""
+  }
+}

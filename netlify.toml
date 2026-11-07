@@ -1,0 +1,14 @@
+# Hébergement Netlify : le site est statique, aucune compilation n'est nécessaire.
+[build]
+  publish = "."
+
+# Le contenu modifié depuis l'administration doit apparaître sans délai.
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"

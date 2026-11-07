@@ -1,0 +1,22 @@
+{
+  "articles": [
+    {
+      "date": "2026-11-07",
+      "categorie": "Annonce",
+      "titre": "Lancement du portail MW+",
+      "resume": "Le portail de la culture wê ouvre ses portes. Histoire, langue, arts, tourisme, médiathèque et annuaire : toutes les rubriques sont ouvertes aux contributions de la communauté.",
+      "lieu": "En ligne",
+      "image": "assets/photos/danse-village.webp",
+      "lien": "#contact--a-propos"
+    },
+    {
+      "date": "2026-11-07",
+      "categorie": "Communauté",
+      "titre": "Appel à contributions : dictionnaire français-wê",
+      "resume": "Locuteurs guéré et wobé, aidez-nous à constituer le premier dictionnaire en ligne. Proposez vos mots depuis la page « Proposer un contenu ».",
+      "lieu": "En ligne",
+      "image": "assets/photos/visages-peints.webp",
+      "lien": "#langue--dictionnaire"
+    }
+  ]
+}

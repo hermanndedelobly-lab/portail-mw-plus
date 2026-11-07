@@ -1,0 +1,53 @@
+{
+  "label": "Langue wê",
+  "court": "Langue",
+  "intro": "Parler, écrire et transmettre le wê, langue de nos parents et de nos enfants.",
+  "image": "",
+  "pages": [
+    {
+      "id": "apprendre",
+      "titre": "Apprendre le wê",
+      "type": "texte",
+      "chapo": "Des leçons progressives pour découvrir la langue : salutations, nombres, famille, vie quotidienne.",
+      "texte": "Le wê est une langue krou à tons : la hauteur de la voix change le sens des mots. C'est pourquoi chaque leçon sera accompagnée d'enregistrements audio.\n\nLeçons prévues : 1. Saluer et se présenter — 2. Compter — 3. La famille — 4. Le marché — 5. Le village et la nature.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "dictionnaire",
+      "titre": "Dictionnaire français-wê",
+      "type": "dictionnaire",
+      "chapo": "Cherchez un mot en français ou en wê.",
+      "texte": "Le dictionnaire s'enrichit des contributions des locuteurs. Chaque mot est relu avant d'être publié, et la variante (guéré, wobé, canton) est indiquée quand elle compte.",
+      "image": "",
+      "aCompleter": false
+    },
+    {
+      "id": "proverbes",
+      "titre": "Proverbes et expressions",
+      "type": "texte",
+      "chapo": "La sagesse des anciens en quelques mots : proverbes, dictons et expressions imagées, avec leur traduction et leur sens.",
+      "texte": "Chaque proverbe sera présenté en wê, traduit mot à mot, puis expliqué : dans quelle situation on l'emploie et quelle leçon il transmet.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "contes",
+      "titre": "Contes et légendes",
+      "type": "texte",
+      "chapo": "Les histoires racontées au clair de lune : animaux rusés, héros, esprits de la forêt.",
+      "texte": "Les contes seront publiés en version bilingue, avec l'enregistrement du conteur quand c'est possible.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "audio",
+      "titre": "Audio et prononciation",
+      "type": "texte",
+      "chapo": "Écouter pour bien prononcer : tons, sons propres au wê et mots du quotidien.",
+      "texte": "Les enregistrements seront réalisés avec des locuteurs de différents cantons afin de faire entendre la richesse des parlers wê.",
+      "image": "",
+      "aCompleter": true
+    }
+  ]
+}

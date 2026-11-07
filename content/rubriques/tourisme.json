@@ -1,0 +1,53 @@
+{
+  "label": "Tourisme & Découverte",
+  "court": "Tourisme",
+  "intro": "Partir à la découverte du pays wê : villages, forêts, montagnes et hospitalité.",
+  "image": "assets/photos/ceremonie-raphia.webp",
+  "pages": [
+    {
+      "id": "villages",
+      "titre": "Nos villages",
+      "type": "texte",
+      "chapo": "Chaque village a son histoire, ses lignages, ses fêtes et ses figures.",
+      "texte": "Une fiche par village : localisation, histoire, chefferie, sites remarquables, fêtes et contacts utiles.\n\nLes fiches seront regroupées par département : Duékoué, Guiglo, Bangolo, Blolequin, Toulépleu, Facobly, Kouibly, Taï…",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "sites",
+      "titre": "Sites touristiques",
+      "type": "texte",
+      "chapo": "Montagnes, forêts sacrées, rivières et lieux de mémoire.",
+      "texte": "Parmi les sites naturels de la région figurent le parc national du Mont Péko et, plus au sud, le parc national de Taï, inscrit au patrimoine mondial de l'UNESCO.\n\nChaque site sera présenté avec les conditions d'accès, la meilleure saison et les règles à respecter.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "paysages",
+      "titre": "Paysages et nature",
+      "type": "texte",
+      "chapo": "Forêt dense, collines, savanes arborées, faune et flore de l'Ouest ivoirien.",
+      "texte": "Galeries photos et fiches sur les espèces et les paysages remarquables.",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "hebergements",
+      "titre": "Hébergements",
+      "type": "texte",
+      "chapo": "Hôtels, auberges, gîtes et séjours chez l'habitant.",
+      "texte": "Liste des hébergements par ville, avec coordonnées et services. Établissements : inscrivez-vous via « Devenir partenaire ».",
+      "image": "",
+      "aCompleter": true
+    },
+    {
+      "id": "guides",
+      "titre": "Guides touristiques",
+      "type": "texte",
+      "chapo": "Des guides locaux pour visiter le pays wê en confiance.",
+      "texte": "Chaque guide présentera ses circuits, ses langues parlées et ses coordonnées.",
+      "image": "",
+      "aCompleter": true
+    }
+  ]
+}

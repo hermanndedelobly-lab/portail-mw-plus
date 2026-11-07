@@ -1,0 +1,47 @@
+{
+  "label": "Contact",
+  "court": "Contact",
+  "intro": "Nous écrire, devenir partenaire ou partager vos connaissances.",
+  "image": "assets/photos/coiffe-cauris.webp",
+  "pages": [
+    {
+      "id": "a-propos",
+      "titre": "À propos",
+      "type": "texte",
+      "chapo": "MW+ est un portail dédié à la valorisation, à la préservation et à la transmission de la culture wê.",
+      "texte": "Notre mission : rassembler en un seul lieu l'histoire, la langue, les arts, les lieux et les forces vives du peuple wê, pour les jeunes, pour la diaspora et pour tous ceux qui veulent le découvrir.\n\nLe portail est collaboratif : chacun peut proposer un texte, une photo, un enregistrement ou une correction. Chaque contribution est relue avant publication.",
+      "image": "",
+      "aCompleter": false
+    },
+    {
+      "id": "nous-contacter",
+      "titre": "Nous contacter",
+      "type": "formulaire",
+      "chapo": "Une question, une remarque, une correction ? Écrivez-nous.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "formulaire": "contact"
+    },
+    {
+      "id": "partenaire",
+      "titre": "Devenir partenaire",
+      "type": "formulaire",
+      "chapo": "Entreprises, associations, institutions : soutenons ensemble la culture wê.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "formulaire": "partenaire"
+    },
+    {
+      "id": "proposer",
+      "titre": "Proposer un contenu",
+      "type": "formulaire",
+      "chapo": "Partagez un récit, un proverbe, une photo, un enregistrement ou un mot pour le dictionnaire.",
+      "texte": "",
+      "image": "",
+      "aCompleter": false,
+      "formulaire": "contenu"
+    }
+  ]
+}
