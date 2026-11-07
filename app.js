@@ -501,7 +501,7 @@
     var n = v.acteurs.length, q = v.quartiers.length;
     return '<a class="card ville-card" href="#ville--' + v.id + '"><span class="ville-card__pin">' + ico("pin") + "</span><h3>" + esc(v.nom) + "</h3>" +
       '<p class="muted">Région : ' + esc(v.region || "") + "</p>" +
-      (n || q ? '<p class="ville-card__stats"><b>' + q + "</b> quartiers · <b>" + n + "</b> acteurs recensés</p>"
+      (n || q ? '<p class="ville-card__stats">' + (q ? "<b>" + q + "</b> quartiers" : "Quartiers à recenser") + " · <b>" + n + "</b> acteurs recensés</p>"
         : '<p class="ville-card__stats">Recensement à venir</p>') +
       '<span class="card__more">Voir la ville ' + ico("arrow") + "</span></a>";
   }
@@ -528,6 +528,8 @@
         "</b><span>acteurs recensés</span></div><div><b>" + Object.keys(compteS).length + "</b><span>secteurs représentés</span></div>" +
         '<a class="btn btn--brand" href="#business--inscrire" data-ville="' + esc(v.nom) + '">Inscrire mon activité</a></div>' +
 
+        (!v.quartiers.length ? '<h2 class="ville__h">Quartiers</h2><div class="empty"><strong>Les quartiers de ' + esc(v.nom) + " restent à recenser</strong>Vous habitez la ville ? " +
+          '<a href="#contact--proposer">Envoyez-nous la liste des quartiers</a>.</div>' : "") +
         (v.quartiers.length ? '<h2 class="ville__h">Quartiers</h2><div class="qgrid" id="quartiers">' +
           '<button type="button" class="qchip" aria-pressed="true" data-q="">Toute la ville <small>' + v.acteurs.length + "</small></button>" +
           v.quartiers.map(function (q) {
