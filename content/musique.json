@@ -1,3 +1,17 @@
 {
-  "titres": []
+  "titres": [
+    {
+      "titre": "Titre à compléter",
+      "artiste": "Chaîne @djisseasibablee1933",
+      "album": "",
+      "annee": "",
+      "genre": "",
+      "audio": "",
+      "audioUrl": "",
+      "youtube": "https://youtu.be/a3RkfsK5orc",
+      "image": "",
+      "telechargement": false,
+      "texte": ""
+    }
+  ]
 }
