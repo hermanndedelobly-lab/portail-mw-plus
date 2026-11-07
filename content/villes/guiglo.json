@@ -1,9 +1,512 @@
 {
   "nom": "Guiglo",
   "region": "Cavally",
-  "statut": "a-venir",
-  "presentation": "",
-  "sourcesQuartiers": [],
-  "quartiers": [],
-  "acteurs": []
+  "statut": "en-cours",
+  "presentation": "Chef-lieu de la région du Cavally, Guiglo est une ville de cacao, de café et d'hévéa, sur la route de Duékoué à Toulépleu. Selon la commune, la ville compte 8 quartiers et 11 villages rattachés. Les quartiers ci-dessous sont ceux cités par la presse et les annuaires : la liste officielle reste à confirmer.",
+  "sourcesQuartiers": [
+    {
+      "titre": "Commune de Guiglo, villages et quartiers",
+      "url": "http://www.communedeguiglo.com/guiglo/villages-et-quartiers/"
+    },
+    {
+      "titre": "AIP (2024), quartiers inondés",
+      "url": "https://www.aip.ci/cote-divoire-aip-petite-saison-des-pluies-plusieurs-quartiers-de-guiglo-sous-les-eaux/"
+    },
+    {
+      "titre": "Abidjan.net, le plus grand quartier de Guiglo",
+      "url": "https://news.abidjan.net/articles/685211/le-plus-grand-quartier-de-guiglo-mis-sous-tension"
+    }
+  ],
+  "quartiers": [
+    {
+      "nom": "Nicla",
+      "description": "Le plus grand quartier de la ville."
+    },
+    {
+      "nom": "Balou Félix",
+      "description": ""
+    },
+    {
+      "nom": "Excellence",
+      "description": ""
+    },
+    {
+      "nom": "Port-Bouët",
+      "description": ""
+    },
+    {
+      "nom": "Nazareth",
+      "description": "Quartier de la paroisse Notre-Dame de Nazareth."
+    },
+    {
+      "nom": "Déguerpis",
+      "description": ""
+    },
+    {
+      "nom": "Sea-Yoro",
+      "description": ""
+    },
+    {
+      "nom": "Kokrenou",
+      "description": ""
+    }
+  ],
+  "acteurs": [
+    {
+      "nom": "Centre Hospitalier Régional (CHR) de Guiglo",
+      "secteur": "Santé",
+      "activite": "Hôpital public : urgences, médecine générale et spécialisée, maternité, imagerie, laboratoire",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Rénovation en cours depuis 2021-2022 (première phase livrée en 2022).",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://annuaireci.com/service-public/chr-de-guiglo/",
+      "verifie": false
+    },
+    {
+      "nom": "Clinique médicale du Cavally",
+      "secteur": "Santé",
+      "activite": "Clinique privée",
+      "quartier": "",
+      "adresse": "Au-dessus de la pharmacie du marché",
+      "telephone": "",
+      "description": "",
+      "source": "Guide du réseau de soins, Ordre des avocats (2025)",
+      "sourceUrl": "https://web.ordredesavocats.ci/wp-content/uploads/2025/03/GUIDE-DE-LASSURE-RESEAU-DE-SOIN.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Centre médical Sainte Bernabé",
+      "secteur": "Santé",
+      "activite": "Centre médical privé",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Guide du réseau de soins, Ordre des avocats (2025)",
+      "sourceUrl": "https://web.ordredesavocats.ci/wp-content/uploads/2025/03/GUIDE-DE-LASSURE-RESEAU-DE-SOIN.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Centre médical OASIS « le Parisien »",
+      "secteur": "Santé",
+      "activite": "Centre médical privé",
+      "quartier": "",
+      "adresse": "Carrefour du Lycée moderne 2",
+      "telephone": "",
+      "description": "",
+      "source": "Guide du réseau de soins, Ordre des avocats (2025)",
+      "sourceUrl": "https://web.ordredesavocats.ci/wp-content/uploads/2025/03/GUIDE-DE-LASSURE-RESEAU-DE-SOIN.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Clinique du Fromager",
+      "secteur": "Santé",
+      "activite": "Clinique privée",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Réseau de soins MUGEF-CI (2020)",
+      "sourceUrl": "https://www.mugef-ci.com/documents/reseau-de-soins/exercice2020.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie de Guiglo",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "En face du Lycée moderne",
+      "telephone": "27 33 70 51 42 / 07 77 09 85 37",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://www.annuaireci.com/cote-divoire/fr-FR/companies/index/pharmacie-de-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie du Marché de Guiglo",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "En face du grand marché",
+      "telephone": "07 07 87 83 34",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://www.annuaireci.com/cote-divoire/fr-FR/companies/index/pharmacie-du-marche-de-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie Mairie de Guiglo",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "Sea-Yoro",
+      "adresse": "Quartier Sea-Yoro",
+      "telephone": "07 57 02 02 28",
+      "description": "",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://www.annuaireci.com/cote-divoire/en-US/companies/index/pharmacie-mairie-de-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Pharmacie Nikla",
+      "secteur": "Pharmacie",
+      "activite": "Pharmacie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Pharmacies de garde CI (déc. 2024)",
+      "sourceUrl": "https://www.pharmacies-de-garde.ci/pharmacies-de-garde-a-linterieur-du-lundi-30-decembre-2024/",
+      "verifie": false
+    },
+    {
+      "nom": "Grand marché de Guiglo",
+      "secteur": "Commerce",
+      "activite": "Marché",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "Cité comme repère par plusieurs commerces voisins.",
+      "source": "Annuaire CI",
+      "sourceUrl": "https://www.annuaireci.com/cote-divoire/fr-FR/companies/index/pharmacie-du-marche-de-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Gnoupalé",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel : chambres, mini-suites, suites",
+      "quartier": "Kokrenou",
+      "adresse": "Quartier Kokrenou",
+      "telephone": "",
+      "description": "",
+      "source": "Site officiel Gnoupalé Hotels",
+      "sourceUrl": "https://www.gnoupale.com/",
+      "verifie": false
+    },
+    {
+      "nom": "Queen Hotel Guiglo",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Complexe hôtelier, salles de conférence et de cérémonie",
+      "quartier": "",
+      "adresse": "BP 40 Guiglo",
+      "telephone": "07 79 06 06 69",
+      "description": "",
+      "source": "Near-place",
+      "sourceUrl": "https://ci.near-place.com/queen-hotel-guiglo-bp-40-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Cheryne Hôtel",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel avec restaurant, bar et centre d'affaires",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Tripinafrica",
+      "sourceUrl": "https://www.tripinafrica.com/hotels/guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Gbaoly 2",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel avec bar et piscine",
+      "quartier": "",
+      "adresse": "Centre de Guiglo",
+      "telephone": "",
+      "description": "",
+      "source": "Timbu",
+      "sourceUrl": "https://timbu.com/ivory-coast/hotels/guiglo/expensive",
+      "verifie": false
+    },
+    {
+      "nom": "Class' Hôtel",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Bon Berger 1",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Fair Play 2",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Mahoulé",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Sol Béni",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Tam-Tam",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Hôtel Tam-Tam Annexe",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Sonia Hôtel",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Maison Inès",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Maison d'hôtes",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Annuaire des rues de Côte d’Ivoire",
+      "sourceUrl": "https://rues-cote-d-ivoire.openalfa.com/guiglo/hebergement",
+      "verifie": false
+    },
+    {
+      "nom": "Dolida Hôtel",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Near-place",
+      "sourceUrl": "https://ci.near-place.com/queen-hotel-guiglo-bp-40-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Résidence Hôtel Bolia",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Near-place",
+      "sourceUrl": "https://ci.near-place.com/queen-hotel-guiglo-bp-40-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "Le Chalet de Venissy",
+      "secteur": "Hôtellerie & hébergement",
+      "activite": "Hôtel",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Near-place",
+      "sourceUrl": "https://ci.near-place.com/queen-hotel-guiglo-bp-40-guiglo",
+      "verifie": false
+    },
+    {
+      "nom": "NSIA Banque, agence de Guiglo",
+      "secteur": "Banque & finance",
+      "activite": "Banque",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "33 70 40 09",
+      "description": "Numéro à l'ancien format à 8 chiffres : depuis 2021, les fixes commencent par 27 (ex. 27 33 70 …).",
+      "source": "Conseil régional du Cavally",
+      "sourceUrl": "https://regioncavally.ci/home/contacts-et-liens-utiles/",
+      "verifie": false
+    },
+    {
+      "nom": "AFG Bank, agence de Guiglo",
+      "secteur": "Banque & finance",
+      "activite": "Banque (transferts MoneyGram)",
+      "quartier": "",
+      "adresse": "Près de CI-Telecom",
+      "telephone": "",
+      "description": "",
+      "source": "MoneyGram",
+      "sourceUrl": "https://www.moneygram.com/locations/ci/fr/cavally/guiglo/76021482",
+      "verifie": false
+    },
+    {
+      "nom": "Trésor public de Guiglo",
+      "secteur": "Administration & services publics",
+      "activite": "Trésorerie",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "33 70 51 33",
+      "description": "Numéro à l'ancien format à 8 chiffres : depuis 2021, les fixes commencent par 27 (ex. 27 33 70 …).",
+      "source": "Conseil régional du Cavally",
+      "sourceUrl": "https://regioncavally.ci/home/contacts-et-liens-utiles/",
+      "verifie": false
+    },
+    {
+      "nom": "Mairie de Guiglo",
+      "secteur": "Administration & services publics",
+      "activite": "Mairie (commune de Guiglo)",
+      "quartier": "",
+      "adresse": "BP 20 Guiglo",
+      "telephone": "33 70 51 59",
+      "description": "Numéro à l'ancien format à 8 chiffres : depuis 2021, les fixes commencent par 27 (ex. 27 33 70 …).",
+      "source": "UVICOCI",
+      "sourceUrl": "http://uvicoci.ci/accueil/communedetail/291",
+      "verifie": false
+    },
+    {
+      "nom": "Conseil régional du Cavally",
+      "secteur": "Administration & services publics",
+      "activite": "Siège du conseil régional",
+      "quartier": "",
+      "adresse": "BP 187 Guiglo",
+      "telephone": "27 22 46 90 29",
+      "description": "",
+      "source": "Conseil régional du Cavally",
+      "sourceUrl": "https://regioncavally.ci/home/contacts-et-liens-utiles/",
+      "verifie": false
+    },
+    {
+      "nom": "Inspection de l'enseignement primaire de Guiglo",
+      "secteur": "Administration & services publics",
+      "activite": "Éducation nationale",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "33 70 73 03",
+      "description": "Numéro à l'ancien format à 8 chiffres : depuis 2021, les fixes commencent par 27 (ex. 27 33 70 …).",
+      "source": "Conseil régional du Cavally",
+      "sourceUrl": "https://regioncavally.ci/home/contacts-et-liens-utiles/",
+      "verifie": false
+    },
+    {
+      "nom": "Lycée moderne de Guiglo",
+      "secteur": "Éducation",
+      "activite": "Lycée public",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "33 70 50 46",
+      "description": "Numéro à l'ancien format à 8 chiffres : depuis 2021, les fixes commencent par 27 (ex. 27 33 70 …).",
+      "source": "Conseil régional du Cavally",
+      "sourceUrl": "https://regioncavally.ci/home/contacts-et-liens-utiles/",
+      "verifie": false
+    },
+    {
+      "nom": "Collège privé Nikla de Guiglo",
+      "secteur": "Éducation",
+      "activite": "Établissement secondaire privé",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Ministère de l'Éducation nationale (2021-2022)",
+      "sourceUrl": "https://www.education.gouv.ci/assets/pdf/Reseau/Etablissement/fichier_11.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Groupe scolaire Nazareth",
+      "secteur": "Éducation",
+      "activite": "Groupe scolaire",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "CEI, centres de recensement (2020)",
+      "sourceUrl": "https://www.cei.ci/wp-content/uploads/2020/05/74-R%C3%A9pertoires-des-centres-de-recensement-en-ci.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Groupe scolaire Nicla",
+      "secteur": "Éducation",
+      "activite": "Groupe scolaire",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "CEI, centres de recensement (2020)",
+      "sourceUrl": "https://www.cei.ci/wp-content/uploads/2020/05/74-R%C3%A9pertoires-des-centres-de-recensement-en-ci.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "Groupe scolaire Sea-Yoro 2",
+      "secteur": "Éducation",
+      "activite": "Groupe scolaire",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "CEI, centres de recensement (2020)",
+      "sourceUrl": "https://www.cei.ci/wp-content/uploads/2020/05/74-R%C3%A9pertoires-des-centres-de-recensement-en-ci.pdf",
+      "verifie": false
+    },
+    {
+      "nom": "UCOOPACA, Union des coopératives agricoles du Cavally",
+      "secteur": "Agriculture & coopératives",
+      "activite": "Production et commercialisation de cacao et de café vert",
+      "quartier": "",
+      "adresse": "",
+      "telephone": "",
+      "description": "",
+      "source": "Page Facebook officielle de l'UCOOPACA",
+      "sourceUrl": "https://www.facebook.com/people/UCOOPACA-Union-des-COOP%C3%A9ratives-Agricoles-du-CAvally/100068643535805/",
+      "verifie": false
+    }
+  ]
 }
