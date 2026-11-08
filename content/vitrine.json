@@ -1,3 +1,12 @@
 {
+  "bannieres": [
+    {
+      "image": "assets/promo/application-mwplus.webp",
+      "alt": "Application mobile MW+ : la culture wê partout avec vous. Culture et histoire, musique, vidéos, téléchargements, tourisme, événements, Wê Business, actualités.",
+      "lien": "#contact--application",
+      "bouton": "Télécharger l’application Android",
+      "masquerDansApp": true
+    }
+  ],
   "produits": []
 }

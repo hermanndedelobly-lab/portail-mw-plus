@@ -636,3 +636,11 @@ a.produit--appel:hover { border-color: var(--brand); }
 body.sur-membres .chat-fab { display: none; }
 @media (max-width: 520px) { .chat-fab span { display: none; } .chat-fab { padding: 14px; } }
 .produit--appel .produit__plus { font-size: 1.6rem; line-height: 1; }
+
+/* Bannières mises en avant */
+.bannieres { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 18px; }
+.banniere { margin: 0; display: grid; gap: 10px; justify-items: center; }
+.banniere > a { display: block; width: 100%; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); transition: transform .15s; }
+.banniere > a:hover { transform: translateY(-2px); }
+.banniere img { width: 100%; height: auto; display: block; }
+.banniere figcaption .btn { font-size: 1rem; padding: 12px 22px; }

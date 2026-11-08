@@ -60,6 +60,33 @@ collections:
     name: produits
     file: content/vitrine.json
     fields:
+    - label: Bannières mises en avant (accueil)
+      label_singular: bannière
+      name: bannieres
+      widget: list
+      required: false
+      summary: '{{fields.bouton}}'
+      fields:
+      - label: Image
+        name: image
+        widget: image
+      - label: Description de l'image (pour l'accessibilité)
+        name: alt
+        widget: string
+        required: false
+      - label: 'Lien (page du site, ex. #contact--application)'
+        name: lien
+        widget: string
+        required: false
+      - label: Texte du bouton
+        name: bouton
+        widget: string
+        required: false
+      - label: Masquer dans l'application Android
+        name: masquerDansApp
+        widget: boolean
+        default: false
+        required: false
     - label: Produits
       label_singular: produit
       name: produits

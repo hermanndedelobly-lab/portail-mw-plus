@@ -241,6 +241,8 @@
       }).join("") + '</ul><div class="villes__links"><a href="#tourisme--villages">' + ico("grid") + "<span>Tous les villages</span></a>" +
       '<a href="#actualites--evenements">' + ico("cal") + "<span>Agenda</span></a></div></div></section>" +
 
+      '<section class="section section--tight" id="bannieres-zone" hidden><div class="wrap bannieres" id="bannieres"></div></section>' +
+
       '<section class="section section--tight"><div class="wrap layout2"><div class="layout2__main">' +
       '<div class="section__head"><h2>Dernières publications</h2><a class="link-more" href="#actualites">Voir tout ' + ico("arrow") + "</a></div>" +
       '<div class="pubs">' + cartes.map(pubCard).join("") + "</div></div>" +
@@ -282,6 +284,15 @@
   function remplirVitrine() {
     lire("vitrine.json").then(function (d) {
       var el = document.getElementById("vitrine"); if (!el) return;
+      var B = (d.bannieres || []).filter(function (x) { return x.image && !(x.masquerDansApp && DANS_APP); });
+      var zb = document.getElementById("bannieres-zone");
+      if (zb && B.length) {
+        document.getElementById("bannieres").innerHTML = B.map(function (x) {
+          return '<figure class="banniere"><a href="' + esc(x.lien || "#accueil") + '"><img src="' + esc(x.image) + '" alt="' + esc(x.alt || "") + '"></a>' +
+            (x.bouton ? '<figcaption><a class="btn btn--brand" href="' + esc(x.lien || "#accueil") + '">' + ico("arrow") + " " + esc(x.bouton) + "</a></figcaption>" : "") + "</figure>";
+        }).join("");
+        zb.hidden = false;
+      }
       var L = (d.produits || []).filter(function (x) { return x.nom; });
       var appel = '<a class="produit produit--appel" href="#contact--partenaire"><span class="produit__plus" aria-hidden="true">+</span>' +
         "<b>Votre produit ici</b><span>Artisan, commerçant, producteur : faites découvrir votre savoir-faire à toute la communauté wê.</span>" +
