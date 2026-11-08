@@ -644,3 +644,4 @@ body.sur-membres .chat-fab { display: none; }
 .banniere > a:hover { transform: translateY(-2px); }
 .banniere img { width: 100%; height: auto; display: block; }
 .banniere figcaption .btn { font-size: 1rem; padding: 12px 22px; }
+.bannieres { align-items: start; }

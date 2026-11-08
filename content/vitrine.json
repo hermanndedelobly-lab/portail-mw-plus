@@ -1,6 +1,13 @@
 {
   "bannieres": [
     {
+      "image": "assets/promo/chat-mwplus.webp",
+      "alt": "MW+ Connect : nos racines nous unissent, nos échanges nous rapprochent. Chat public pour échanger avec les membres autour de notre culture, messagerie privée confidentielle.",
+      "lien": "#membres--discussions",
+      "bouton": "Rejoindre la discussion",
+      "masquerDansApp": false
+    },
+    {
       "image": "assets/promo/application-mwplus.webp",
       "alt": "Application mobile MW+ : la culture wê partout avec vous. Culture et histoire, musique, vidéos, téléchargements, tourisme, événements, Wê Business, actualités.",
       "lien": "#contact--application",
