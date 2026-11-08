@@ -1339,6 +1339,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -1435,6 +1453,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -1531,6 +1567,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -1627,6 +1681,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -1723,6 +1795,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -1819,6 +1909,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -1915,6 +2023,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -2011,6 +2137,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean
@@ -2107,6 +2251,24 @@ collections:
         name: texte
         widget: text
         required: false
+      - label: Vidéos (YouTube ou Facebook)
+        label_singular: vidéo
+        name: videos
+        widget: list
+        required: false
+        summary: '{{fields.titre}}'
+        fields:
+        - label: Titre
+          name: titre
+          widget: string
+        - label: Lien de la vidéo
+          name: url
+          widget: string
+          hint: 'YouTube : lien « Partager ». Facebook : lien complet facebook.com/reel/… pour que la vidéo se lise sur le site.'
+        - label: Crédit (auteur, page)
+          name: credit
+          widget: string
+          required: false
       - label: Afficher « Rubrique en construction »
         name: aCompleter
         widget: boolean

@@ -645,3 +645,16 @@ body.sur-membres .chat-fab { display: none; }
 .banniere img { width: 100%; height: auto; display: block; }
 .banniere figcaption .btn { font-size: 1rem; padding: 12px 22px; }
 .bannieres { align-items: start; }
+
+/* Vidéos */
+.videos { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 16px; }
+.video { margin: 0; display: grid; gap: 6px; }
+.video figcaption { font-size: .85rem; color: var(--muted); }
+.video figcaption b { color: var(--text); }
+.video__cadre { position: relative; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 12px; overflow: hidden; background: #000; }
+.video__cadre--fb { aspect-ratio: 9 / 16; max-height: 640px; margin-inline: auto; width: 100%; max-width: 360px; }
+.video__cadre iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video__lien { display: grid; place-items: center; gap: 10px; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 12px; text-decoration: none; color: #fff; font-weight: 700;
+  background: radial-gradient(400px 200px at 70% 20%, rgba(246,201,69,.25), transparent 60%), linear-gradient(135deg, var(--forest), #1d4a2c); align-content: center; }
+.video__play { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-size: 1.6rem; background: #1877f2; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.video__lien:hover .video__play { transform: scale(1.06); }

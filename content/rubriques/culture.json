@@ -11,7 +11,14 @@
       "chapo": "Danses de réjouissance, danses de masques, danses des femmes et des jeunes.",
       "texte": "Chaque danse a son occasion, ses pas, ses tambours et ses chants. Les fiches préciseront l'origine, le sens et les moments où elle est exécutée.",
       "image": "assets/photos/danse-village.webp",
-      "aCompleter": true
+      "aCompleter": true,
+      "videos": [
+        {
+          "titre": "Danse traditionnelle wê",
+          "url": "https://www.facebook.com/share/r/1DNjHcoYv6/",
+          "credit": "Vidéo partagée sur Facebook"
+        }
+      ]
     },
     {
       "id": "musique",

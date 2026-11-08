@@ -359,7 +359,7 @@
         '<select class="select" id="artiste" aria-label="Artiste"><option value="">Tous les artistes</option></select></div><div id="results" class="titres"><p class="muted">Chargement…</p></div>'; break;
       case "villes": body = figure(p.image, p.titre, p.credit, p.creditUrl) + paras(p.texte) + '<div class="grid villes-grid" id="villes-grid"><p class="muted">Chargement des villes…</p></div>'; break;
       default:
-        body = figure(p.image, p.titre, p.credit, p.creditUrl) + paras(p.texte) + (p.aCompleter ? aCompleter : "");
+        body = figure(p.image, p.titre, p.credit, p.creditUrl) + paras(p.texte) + videos(p.videos) + (p.aCompleter ? aCompleter : "");
     }
     main.innerHTML = pageHead(s.label, p.titre, p.chapo,
       '<a href="#accueil">Accueil</a> › <a href="' + href(s.id) + '">' + esc(s.label) + "</a> › " + esc(p.titre)) +
@@ -710,6 +710,20 @@
     var a = e.target.closest("a[data-ville]");
     if (a) prefill = { ville: a.dataset.ville, quartier: a.dataset.quartier || "", nom: a.dataset.nom || "", type: a.dataset.type || "" };
   });
+
+  /* Vidéos d'une page : YouTube et Facebook intégrés, sinon un lien */
+  function videos(L) {
+    L = (L || []).filter(function (v) { return v && v.url; });
+    if (!L.length) return "";
+    return '<h2 class="ville__h">Vidéos</h2><div class="videos">' + L.map(function (v) {
+      var yt = idYoutube(v.url), fbOk = /facebook\.com\/(reel\/\d+|[^/]+\/videos\/|watch\/?\?v=\d+)/.test(v.url);
+      var lecteur = yt ? '<div class="video__cadre"><iframe src="https://www.youtube-nocookie.com/embed/' + yt + '?rel=0" title="' + esc(v.titre || "Vidéo") + '" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe></div>' :
+        fbOk ? '<div class="video__cadre video__cadre--fb"><iframe src="https://www.facebook.com/plugins/video.php?show_text=false&href=' + encodeURIComponent(v.url) + '" title="' + esc(v.titre || "Vidéo") + '" loading="lazy" allow="encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe></div>' :
+        '<a class="video__lien" href="' + esc(v.url) + '" target="_blank" rel="noopener"><span class="video__play" aria-hidden="true">▶</span><span>Regarder la vidéo' + (/facebook/.test(v.url) ? " sur Facebook" : "") + "</span></a>";
+      return '<figure class="video">' + lecteur + "<figcaption><b>" + esc(v.titre || "") + "</b>" + (v.credit ? " · " + esc(v.credit) : "") +
+        (yt || fbOk ? ' · <a href="' + esc(v.url) + '" target="_blank" rel="noopener">Voir sur ' + (yt ? "YouTube" : "Facebook") + "</a>" : "") + "</figcaption></figure>";
+    }).join("") + "</div>";
+  }
 
   function idYoutube(u) {
     var m = String(u || "").match(/(?:youtu\.be\/|v=|\/shorts\/|\/embed\/|\/live\/)([A-Za-z0-9_-]{11})/);
