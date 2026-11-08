@@ -250,6 +250,21 @@
           "</span><b>" + esc(x.titre) + "</b><small>" + ico("clock") + esc(x.meta) + "</small></span></a></li>";
       }).join("") + '</ul><a class="link-more" href="#culture">Plus de culture ' + ico("arrow") + "</a></aside></div></section>" +
 
+      '<section class="section section--tight"><div class="wrap"><div class="section__head"><div><p class="eyebrow">Vitrine</p><h2>Produits et savoir-faire wê</h2></div>' +
+      '<a class="link-more" href="#contact--partenaire">Mettre mon produit en avant ' + ico("arrow") + '</a></div><div class="vitrine" id="vitrine"><p class="muted">Chargement…</p></div></div></section>' +
+
+      '<section class="section section--tight"><div class="wrap"><div class="invite-chat"><div class="invite-chat__texte">' +
+      '<p class="eyebrow">Communauté</p><h2>Rejoignez la conversation</h2>' +
+      "<p>Retrouvez les wê de votre ville et de la diaspora, échangez des nouvelles, organisez vos événements et écrivez-vous en privé. L’inscription est gratuite.</p>" +
+      '<div class="hero__actions"><a class="btn btn--gold" href="#membres--discussions">' + ico("chat") + " Entrer dans la discussion</a>" +
+      '<a class="btn btn--ghost" href="#membres--compte">Créer mon compte</a></div></div>' +
+      '<div class="invite-chat__salons"><p class="invite-chat__label">Choisissez votre salon</p><div class="invite-chat__liste">' +
+      [{ id: "general", nom: "Général" }].concat(villesListe()).map(function (v) {
+        return '<a class="salon-chip" href="#membres--discussions" data-salon="' + v.id + '"><span aria-hidden="true">#</span>' + esc(v.nom) + "</a>";
+      }).join("") + "</div>" +
+      '<div class="bulles" aria-hidden="true"><span class="bulle">Qui sera à la fête de génération à Duékoué ?</span>' +
+      '<span class="bulle bulle--moi">Moi ! On se retrouve au quartier Carrefour 🙌🏾</span></div></div></div></div></section>' +
+
       '<section class="section section--tight"><div class="wrap"><div class="section__head"><h2>Toutes les rubriques</h2></div>' +
       '<div class="grid grid--rubriques">' + rubriques.map(sectionCard).join("") + "</div></div></section>" +
 
@@ -257,6 +272,32 @@
       "<p>Un conte, un proverbe, une photo d’archive, un mot wê, l’histoire de votre village : chaque contribution enrichit le patrimoine commun.</p></div>" +
       '<a class="btn btn--gold" href="#contact--proposer">Proposer un contenu</a></div></div></section>';
     startCarousel();
+    remplirVitrine();
+    main.querySelectorAll("[data-salon]").forEach(function (a) {
+      a.addEventListener("click", function () { if (window.MWMembres && window.MWMembres.salon) window.MWMembres.salon(a.dataset.salon); });
+    });
+  }
+
+  /* ---------- Vitrine des produits ---------- */
+  function remplirVitrine() {
+    lire("vitrine.json").then(function (d) {
+      var el = document.getElementById("vitrine"); if (!el) return;
+      var L = (d.produits || []).filter(function (x) { return x.nom; });
+      var appel = '<a class="produit produit--appel" href="#contact--partenaire"><span class="produit__plus" aria-hidden="true">+</span>' +
+        "<b>Votre produit ici</b><span>Artisan, commerçant, producteur : faites découvrir votre savoir-faire à toute la communauté wê.</span>" +
+        '<span class="card__more">Devenir partenaire ' + ico("arrow") + "</span></a>";
+      el.innerHTML = L.map(function (x) {
+        var tel = String(x.whatsapp || "").replace(/\D/g, "");
+        return '<article class="produit">' + (x.image ? '<img src="' + esc(x.image) + '" alt="" loading="lazy">' : '<span class="produit__img-vide" aria-hidden="true">★</span>') +
+          '<div class="produit__corps">' + (x.categorie ? '<span class="tag">' + esc(x.categorie) + "</span>" : "") + "<h3>" + esc(x.nom) + "</h3>" +
+          '<p class="muted">' + esc([x.vendeur, x.ville].filter(Boolean).join(" · ")) + "</p>" +
+          (x.description ? "<p>" + esc(x.description) + "</p>" : "") +
+          '<div class="produit__pied">' + (x.prix ? '<b class="produit__prix">' + esc(x.prix) + "</b>" : "<span></span>") +
+          (tel ? '<a class="btn btn--brand btn--sm" href="https://wa.me/' + tel + "?text=" + encodeURIComponent("Bonjour, je vous contacte depuis MW+ au sujet de : " + x.nom) + '" target="_blank" rel="noopener">Commander</a>' :
+            x.lien ? '<a class="btn btn--brand btn--sm" href="' + esc(x.lien) + '" target="_blank" rel="noopener">Voir</a>' : "") +
+          "</div></div></article>";
+      }).join("") + appel;
+    }).catch(function () { var el = document.getElementById("vitrine"); if (el) el.innerHTML = ""; });
   }
 
   /* ---------- Recherche ---------- */
@@ -695,6 +736,7 @@
     var s = parts[0] ? section(parts[0]) : null;
     clearInterval(timer);
     main.onclick = null;
+    document.body.classList.toggle("sur-membres", /^#membres/.test(location.hash));
     if (window.MWMembres) window.MWMembres.quitter();
     if (!parts.length || (s && s.id === "accueil")) renderHome();
     else if (parts[0] === "recherche") renderSearch();

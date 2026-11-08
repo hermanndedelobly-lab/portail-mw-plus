@@ -590,3 +590,49 @@ a.card:hover { transform: translateY(-3px); border-color: var(--gold); }
 .membres > *, .mb > *, .chat, .chat__fil { min-width: 0; }
 .figure figcaption { font-size: .76rem; color: var(--muted); margin-top: 6px; }
 .figure figcaption a { color: inherit; }
+
+/* ===== Vitrine ===== */
+.vitrine { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 260px); gap: 14px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+.produit { scroll-snap-align: start; display: flex; flex-direction: column; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; color: var(--text); text-decoration: none; min-width: 0; }
+.produit img, .produit__img-vide { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; max-width: 100%; }
+.produit__img-vide { display: grid; place-items: center; font-size: 2rem; color: var(--gold-2); background: linear-gradient(135deg, var(--forest), #2c5a1f); }
+.produit__corps { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.produit h3 { font-family: var(--sans); font-size: 1rem; margin: 2px 0 0; }
+.produit p { margin: 0; font-size: .88rem; }
+.produit__pied { margin-top: auto; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.produit__prix { color: var(--brand); font-variant-numeric: tabular-nums; }
+.produit--appel { border: 2px dashed var(--gold); background: linear-gradient(160deg, var(--surface), var(--surface-2)); padding: 20px 18px; gap: 10px; justify-content: center; }
+.produit--appel b { font-family: var(--serif); font-size: 1.2rem; }
+.produit--appel span { font-size: .9rem; color: var(--muted); }
+.produit--appel .card__more { color: var(--brand); font-weight: 600; }
+.produit__plus { width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; font: 800 1.6rem var(--sans); color: #1b1300 !important; background: linear-gradient(135deg, var(--gold-2), var(--orange)); }
+a.produit--appel:hover { border-color: var(--brand); }
+
+/* ===== Invitation au chat ===== */
+.invite-chat { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 28px; align-items: center; border-radius: 20px; padding: 28px; color: #fff;
+  background: radial-gradient(600px 300px at 90% 10%, rgba(246,201,69,.18), transparent 60%), linear-gradient(130deg, var(--forest) 0%, #17402a 100%); }
+.invite-chat .eyebrow { color: var(--gold-2); }
+.invite-chat h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 8px; }
+.invite-chat p { color: #e6e0cf; margin: 0; }
+.invite-chat .hero__actions { margin-top: 18px; }
+.invite-chat .btn .ico { width: 1.1em; height: 1.1em; }
+.invite-chat__label { font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; color: #cfc8b4 !important; margin-bottom: 8px !important; }
+.invite-chat__liste { display: flex; flex-wrap: wrap; gap: 8px; }
+.salon-chip { display: inline-flex; gap: 4px; align-items: center; padding: 7px 13px; border-radius: 999px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); color: #fff; text-decoration: none; font-size: .88rem; font-weight: 600; }
+.salon-chip span { color: var(--gold-2); }
+.salon-chip:hover { background: rgba(246,201,69,.18); border-color: var(--gold-2); }
+.bulles { display: grid; gap: 8px; margin-top: 18px; }
+.bulle { justify-self: start; max-width: 85%; background: rgba(255,255,255,.12); padding: 8px 12px; border-radius: 14px 14px 14px 4px; font-size: .88rem; }
+.bulle--moi { justify-self: end; background: var(--brand); border-radius: 14px 14px 4px 14px; }
+@media (max-width: 860px) { .invite-chat { grid-template-columns: minmax(0, 1fr); padding: 22px; } }
+
+/* Bouton flottant de discussion */
+.chat-fab { position: fixed; z-index: 40; right: calc(16px + env(safe-area-inset-right, 0px)); bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px 12px 14px; border-radius: 999px; background: var(--brand); color: #fff;
+  font: 700 .92rem var(--sans); text-decoration: none; box-shadow: 0 6px 20px rgba(10, 40, 20, .35); transition: transform .15s; }
+.chat-fab svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; }
+.chat-fab:hover { transform: translateY(-2px); }
+.chat-fab::after { content: ""; position: absolute; top: 6px; right: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold-2); box-shadow: 0 0 0 2px var(--brand); }
+body.sur-membres .chat-fab { display: none; }
+@media (max-width: 520px) { .chat-fab span { display: none; } .chat-fab { padding: 14px; } }
+.produit--appel .produit__plus { font-size: 1.6rem; line-height: 1; }

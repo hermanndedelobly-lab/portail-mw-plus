@@ -432,5 +432,6 @@
     });
   }
 
-  window.MWMembres = { render: render, quitter: couper, publies: publies, agenda: agenda, actif: function () { return !!config(); } };
+  window.MWMembres = { render: render, quitter: couper, publies: publies, agenda: agenda, actif: function () { return !!config(); },
+    salon: function (id) { salon = id || "general"; } };
 })();

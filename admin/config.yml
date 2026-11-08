@@ -53,6 +53,57 @@ collections:
         name: credit
         widget: string
         required: false
+- name: vitrine
+  label: Vitrine (produits mis en avant)
+  files:
+  - label: Produits
+    name: produits
+    file: content/vitrine.json
+    fields:
+    - label: Produits
+      label_singular: produit
+      name: produits
+      widget: list
+      add_to_top: true
+      summary: '{{fields.nom}} · {{fields.vendeur}}'
+      fields:
+      - label: Nom du produit ou du service
+        name: nom
+        widget: string
+      - label: Catégorie
+        name: categorie
+        widget: string
+        required: false
+        hint: 'Ex. : Artisanat, Pagnes, Gastronomie, Musique, Agriculture'
+      - label: Vendeur ou artisan
+        name: vendeur
+        widget: string
+        required: false
+      - label: Ville
+        name: ville
+        widget: string
+        required: false
+      - label: Prix
+        name: prix
+        widget: string
+        required: false
+        hint: 'Ex. : 15 000 FCFA, ou « Sur devis »'
+      - label: Description courte
+        name: description
+        widget: text
+        required: false
+      - label: Photo
+        name: image
+        widget: image
+        required: false
+      - label: Numéro WhatsApp pour commander (avec indicatif, ex. +225 07…)
+        name: whatsapp
+        widget: string
+        required: false
+      - label: Ou lien (boutique, page Facebook…)
+        name: lien
+        widget: string
+        required: false
 - name: actualites
   label: Actualités
   files:
